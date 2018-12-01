@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title> Index </title>
+		<link type="text/css" rel="stylesheet" href="flashcardApp.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+		<script >
+			document.addEventListener("DOMContentLoaded", function() {
+				function addTextWithinDiv() {
+					var flashcardSetName = document.getElementById("flashcardSetName");
+					flashcardSetName.textContent = 'First Set';
+					document.getElementById("flashcardSet-1").appendChild(flashcardSetName);
+				}
+
+				document.getElementById("flashcardSet-1").addEventListener("click", addTextWithinDiv, false);
+			})
+		</script>
+	</head>
+	<body>
+		<header class="headerActivityPage">
+			<div class="nameOfSite">
+				<a class="nameOfSite-a" href="flashcardAppIndex.html"> 
+					<h1 class="nameOfSite-h1"> Flashcard App </h1>
+				</a>
+			</div>
+			<div class="newSets-navBar">
+				<div class="createNewSet">
+					<a class="createNewSet-a" href="flashcardAppCreateNewSet.html"> 
+						<button class="dropbtn"> <i class="far fa-plus-square"></i>
+						</button>
+					</a>
+				</div>
+				<div class="sideNavBar">
+					<a class="sideNavBar-a" href="">
+						<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
+					</a>
+				</div>
+			</div>
+		</header>	
+		<div class="container-1">
+			<div class="searchSets-outer">
+				<div class="searchSetsDiv">
+					<h2 class="searchSetsDiv-h2"> All of your sets </h2>
+					<div class="searchBar-inDiv">
+						<input class="searchBar-Input" type="text" placeholder="Search all your sets by title"/>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="container-2">
+			<div class="flashcardSet-1" id="flashcardSet-1">
+				<h2 class="flashcardSetName" id="flashcardSetName">
+				</h2>
+				<h3 class="flashcardSetNumTerm">
+				</h3>
+				<div class="userID">
+					<img class="userIDImage" src=""/>
+				</div>
+			</div>		
+		</div>			
+	</body>
+</html>
