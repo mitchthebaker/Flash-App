@@ -2,12 +2,15 @@ const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
+//const app = express(); also works but seems a bit redundant for what I'm doing here
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
+  //.engine('html', require('ejs').renderFile)
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/flash', (req, res) => res.render('pages/flashcardAppIndex'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
