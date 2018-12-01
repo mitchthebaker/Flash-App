@@ -1,0 +1,212 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat|Righteous|Maven+Pro');
+
+body {
+	margin: 0px;
+}
+
+ .headerActivityPage {
+	background-color: black;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	opacity: 0.8;
+
+}
+
+.nameOfSite {
+	margin: 0px 20px 0px 20px;
+	padding: 0px;
+	margin-right: auto;
+}
+
+.nameOfSite-a {
+	text-decoration: none;
+}
+
+.nameOfSite-h1 {
+	color: white;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+.dropbtn
+{
+	background-color: black;
+	color: white;
+	padding: 16px;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+.newSets-navBar {
+	margin-right: 20px;
+}
+
+.createNewSet {
+	display: inline-block;
+}
+
+.sideNavBar {
+	display: inline-block;
+}
+
+.container-1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #86ACDE;
+	width: 100%;
+}
+
+.searchSets-outer {
+	margin: 50px;
+	width: 85%;
+}
+
+.searchSetsDiv-h2 {
+	/* color: hsla(0, 0%, 100%, 0.86);
+	   opacity: 0.9; 
+	*/
+	color: white;
+	font-size: 40px;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 40px;
+}
+
+.searchBar-inDiv {
+	border-bottom: solid #2F4F4F 2px;
+}
+
+.searchBar-Input {
+	width: 100%;
+	border: 0;
+	padding: 5px 0px 10px 0px;
+	background-color: #86ACDE;
+}
+
+input:focus, textarea:focus {
+    outline: none; /** For Safari, etc **/
+    border:1px solid gray; /** For Firefox **/
+}
+
+input[type="text"].searchBar-Input::placeholder {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+}
+
+.container-2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #F7F8F8;
+	width: 100%;
+}
+.flashcardSet-1 {
+	background-color: white;
+	width: 80%;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	margin: 15px 0px 15px 0px;
+}
+
+.flashcardSetName {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #696969;
+}
+
+/*
+	THE CSS BELOW IS INTENDED FOR FILENAME "flashcardAppCreateNewSet.html"
+*/
+
+.createNewSet-outer {
+	margin: 30px;
+	width: 85%;
+}
+
+.createNewSetsDiv-h2 {
+	/* color: hsla(0, 0%, 100%, 0.86);
+	   opacity: 0.9; 
+	*/
+	color: white;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 50px;
+}
+
+.newSetName-inDiv {
+	border-bottom: solid #2F4F4F 2px;
+}
+
+.newSetName-Input {
+	width: 100%;
+	border: 0;
+	padding: 5px 0px 10px 0px;
+	background-color: #86ACDE;
+}
+
+input:focus, textarea:focus {
+    outline: none; /** For Safari, etc **/
+    border:1px solid gray; /** For Firefox **/
+}
+
+input[type="text"].newSetName-Input::placeholder {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+}
+
+.newCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85%;
+	margin: 20px;
+	background-color: white;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.Term-Definition {
+	
+}
+
+.Term {
+	display: inline-block;
+	margin: 15px;
+}
+
+.newCard-Term {
+	border: 0;
+	border-bottom: solid #2F4F4F 2px;
+}
+
+.Term-h3 {
+	font-size: 14px;
+}
+
+.Definition {
+	display: inline-block;
+	margin: 15px;
+}
+
+.newCard-Definition {
+	border: 0;
+	border-bottom: solid #2F4F4F 2px;
+}
+
+.Definition-h3 {
+	font-size: 14px;
+}
+
+.addNewCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85%;
+	margin: 5px;
+	background-color: white;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
