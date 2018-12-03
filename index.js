@@ -20,6 +20,7 @@ express()
   		const results = {
   			'results': (result) ? result.rows : null
   		};
+
   		res.render('pages/db', results);
   		client.release();
   	}
@@ -44,3 +45,5 @@ express()
   	connectionString: process.env.DATABASE_URL,
   	ssl:true
   });
+
+  console.log("test");
