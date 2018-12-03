@@ -1,7 +1,6 @@
 var EventEmitter = require('events').EventEmitter;
-module.exports = new EventEmitter();
 
-var module.exports.sampleData = {
+var sampleData = {
 	firstWord: firstDefinition,
 	secondWord: secondDefinition,
 	thirdWord: thirdDefinition,
@@ -9,6 +8,6 @@ var module.exports.sampleData = {
 	fifthWord: fifthDefinition,
 };
 
-function test() {
-	console.log(module.exports.sampleData);
-}
+export {
+	sampleData
+};

@@ -46,4 +46,3 @@ express()
   	ssl:true
   });
 
-  console.log("test");
