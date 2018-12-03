@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 5000
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'public/scripts')))
   .set('views', path.join(__dirname, 'views'))
   //.engine('html', require('ejs').renderFile)
   .set('view engine', 'ejs')
