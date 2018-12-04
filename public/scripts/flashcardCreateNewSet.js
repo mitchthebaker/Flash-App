@@ -1,16 +1,3 @@
-			
-/*At this moment in time, the below function acts more as a switch function more than anything else */
-
-function addNewCard() {
-	let newCard = document.getElementById("newCard");
-	document.getElementById("container-2").appendChild(newCard);
-}
-
-function setAttributes(element, attributes) {
-	for(var key in attributes) {
-		element.setAttribute(key, attributes[key]);
-	}
-}
 
 function createNewElement(element, attributes) {
 	if(attributes) {
@@ -30,6 +17,7 @@ function createNewElement(element, attributes) {
 }
 
 function createNewCardDiv() {
+
 	let newCard = createNewElement("div", {"class": "newCard", "id": "newCard"});
 				
 	newCard.innerHTML = 
@@ -40,7 +28,7 @@ function createNewCardDiv() {
 	document.getElementById("newCard").after(newCard);
 }
 
-document.getElementById("addCardButton").addEventListener("click", createNewCardDiv, false);
+document.getElementById("addCardButton").addEventListener("click", createNewCardDiv(), false);
 
 import {sampleData} from '/sampleData.js';
 
