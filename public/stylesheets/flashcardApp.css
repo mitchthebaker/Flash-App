@@ -163,13 +163,13 @@ input[type="text"].newSetName-Input::placeholder {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
+	background-color: #F7F8F8;
 }
 
 .flashForm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #F7F8F8;
 	width: 100%;
 }
 
