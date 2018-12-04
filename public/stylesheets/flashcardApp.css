@@ -158,6 +158,10 @@ input[type="text"].newSetName-Input::placeholder {
 	font-size: 15px;
 }
 
+.flashForm {
+	width: 85%;
+}
+
 .newCard {
 	display: flex;
 	flex-direction: column;
