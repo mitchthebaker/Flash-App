@@ -28,7 +28,9 @@ function createNewCardDiv() {
 	document.getElementById("newCard").appendChild(newCard);
 }
 
-document.getElementById("addCardButton").addEventListener("click", createNewCardDiv(), false);
+document.getElementById("addCardButton").addEventListener("click", function() {
+	createNewCardDiv()
+});
 
 import {sampleData} from '/sampleData.js';
 
