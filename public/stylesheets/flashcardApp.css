@@ -158,6 +158,13 @@ input[type="text"].newSetName-Input::placeholder {
 	font-size: 15px;
 }
 
+.container-flashCreate-2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
 .flashForm {
 	display: flex;
 	flex-direction: column;
@@ -206,6 +213,10 @@ input[type="text"].newSetName-Input::placeholder {
 
 .Definition-h3 {
 	font-size: 14px;
+}
+
+.hidden {
+	display: none;
 }
 
 .addNewCard {

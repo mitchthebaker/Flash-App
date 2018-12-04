@@ -40,6 +40,7 @@
 			</div>
 		</div>		
 	</div> 
+	<div class="container-flashCreate-2">
 		<form class="flashForm" action="" method="post">
 			<div class="newCard" id="newCard">
 				<div class="Term-Definition">
@@ -53,11 +54,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="addNewCard">
-				<h3 class="addCardButton" id="addCardButton"> Add a card </h3>
-			</div>
-			<div class="sendButton">
-				<button id="sendButton" type="submit"> Complete your set </button>
-			</div>
+			<input type="submit" id="submit-form" class="hidden" />
 		</form>
+		<div class="addNewCard">
+			<h3 class="addCardButton" id="addCardButton"> Add a card </h3>
+		</div>
+		<div class="sendButton">
+				<label for="submit-form" tabindex="0" id="sendButton"> Complete your set </label>
+		</div>
+	</div>
 </body>
