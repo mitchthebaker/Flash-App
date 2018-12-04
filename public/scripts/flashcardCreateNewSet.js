@@ -42,5 +42,4 @@ function createNewCardDiv() {
 
 document.getElementById("addCardButton").addEventListener("click", createNewCardDiv, false);
 
-//import sampleData from '/dataDir/sampleData.js';
-//console.log(sampleData);
+import sampleData from 'sampleData.js';
