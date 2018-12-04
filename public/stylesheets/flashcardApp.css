@@ -195,10 +195,12 @@ input[type="text"].newSetName-Input::placeholder {
 .newCard-Term {
 	border: 0;
 	border-bottom: solid #2F4F4F 2px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .Term-h3 {
 	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .Definition {
@@ -209,10 +211,12 @@ input[type="text"].newSetName-Input::placeholder {
 .newCard-Definition {
 	border: 0;
 	border-bottom: solid #2F4F4F 2px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .Definition-h3 {
 	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .hidden {
@@ -230,13 +234,20 @@ input[type="text"].newSetName-Input::placeholder {
 
 .addCardButton {
 	padding: 5px;
+	font-family: 'Montserrat', sans-serif;
 }
 
-#sendButton {
-	width: 100px;
+.sendButton {
+	width: 120px;
 	margin: 20px;
 	border: 0;
 	background-color: white;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	
+}
+
+#sendButton {
+	font-family: 'Montserrat', sans-serif;
+	padding: 5px;
 }
 
