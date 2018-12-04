@@ -213,6 +213,10 @@ input[type="text"].newSetName-Input::placeholder {
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+.addCardButton {
+	padding: 20px;
+}
+
 #sendButton {
 	width: 100px;
 	margin: 20px;
