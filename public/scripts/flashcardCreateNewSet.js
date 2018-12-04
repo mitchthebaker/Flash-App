@@ -25,7 +25,7 @@ function createNewCardDiv() {
 
 	console.log(newCard);
 				
-	document.getElementById("newCard").after(newCard);
+	document.getElementById("newCard").appendChild(newCard);
 }
 
 document.getElementById("addCardButton").addEventListener("click", createNewCardDiv(), false);
