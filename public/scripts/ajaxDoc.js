@@ -13,7 +13,8 @@ window.addEventListener("load", function() {
 	function sendData() {
 		var xhr = new XMLHttpRequest();
 		var formData = new FormData(form);
-
+		console.log(formData);
+		
 		//console.log's event.target.responseText on successful data submission
 		xhr.addEventListener("load", function(event) {
 			console.log(event.target.responseText);
@@ -23,8 +24,8 @@ window.addEventListener("load", function() {
 		xhr.addEventListener("error", function(event) {
 			console.log("Error: " + event);
 		});
-
-		xhr.open("POST", "https://floating-stream-61877.herokuapp.com/db");
+		
+		xhr.open("POST", "/db");
 		xhr.send(formData);
 	}
 
