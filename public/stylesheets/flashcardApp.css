@@ -239,16 +239,19 @@ input[type="text"].newSetName-Input::placeholder {
 
 .sendButton {
 	width: 120px;
-	margin: 20px;
+	margin: 20px 40px 20px 0;
+	padding: 5px;
 	border: 0;
 	background-color: white;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	text-align: center;
-	
+	margin-left: auto;
 }
 
 #sendButton {
 	font-family: 'Montserrat', sans-serif;
-	padding: 5px;
+	padding: 10px;
+	font-size: 12px;
+	text-align: center;
 }
 
