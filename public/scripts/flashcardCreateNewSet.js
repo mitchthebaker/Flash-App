@@ -32,6 +32,7 @@ var elementClicked = false;
 
 function clickHandler() {
 	elementClicked = true;
+	console.log("elementClicked is now TRUE, end of do/while");
 }
 
 function submitTF() {
