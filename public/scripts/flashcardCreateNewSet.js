@@ -28,6 +28,22 @@ function createNewCardDiv() {
 	document.querySelector(".flashForm").appendChild(newCard);
 }
 
+var elementClicked = false;
+
+function clickHandler() {
+	elementClicked = true;
+}
+
+function submitTF() {
+	let sendButton = document.getElementById("sendButton");
+	sendButton.addEventListener('click', function() {
+		clickHandler()
+	});
+	return elementClicked;
+}
+
+console.log(submitTF());
+
 document.getElementById("addCardButton").addEventListener("click", function() {
 	createNewCardDiv()
 });
