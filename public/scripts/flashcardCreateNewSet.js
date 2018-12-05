@@ -52,3 +52,9 @@ do {
 import {sampleData} from '/sampleData.js';
 
 console.log(sampleData);
+
+/*
+	Just so I remember where I left off last night, I got this do/while
+	loop working so my next step is to include a count that increases incrementally
+	so that I can change the attributes of each card using .setAttribute() method
+*/
