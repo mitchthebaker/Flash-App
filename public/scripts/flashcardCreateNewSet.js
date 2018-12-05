@@ -42,11 +42,11 @@ function submitTF() {
 	return elementClicked;
 }
 
-console.log(submitTF());
-
-document.getElementById("addCardButton").addEventListener("click", function() {
-	createNewCardDiv()
-});
+do {
+	document.getElementById("addCardButton").addEventListener("click", function() {
+		createNewCardDiv()
+	});
+} while(submitTF() !== false);
 
 import {sampleData} from '/sampleData.js';
 
