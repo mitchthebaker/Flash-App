@@ -13,8 +13,7 @@ window.addEventListener("load", function() {
 	function sendData() {
 		var xhr = new XMLHttpRequest();
 		var formData = new FormData(form);
-		console.log(formData);
-		
+
 		//console.log's event.target.responseText on successful data submission
 		xhr.addEventListener("load", function(event) {
 			console.log(event.target.responseText);
@@ -25,7 +24,7 @@ window.addEventListener("load", function() {
 			console.log("Error: " + event);
 		});
 		
-		xhr.open("POST", "/db");
+		xhr.open("POST", "/index.js");
 		xhr.send(formData);
 	}
 
@@ -36,3 +35,26 @@ window.addEventListener("load", function() {
 		sendData();
 	});
 });
+
+/*
+console.log("Beginning AJAX request..");
+var xhr = new XMLHttpRequest();
+var params = "text = stuff";
+xhr.open("POST", "/index.js", true);
+
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() {
+	console.log("Within onreadystatechange function: ");
+	if(xhr.readyState == 4 && xhr.status == 200) {
+		console.log(xhr.responseText);
+	}
+	else {
+		console.log('readyState = ' + xhr.readyState + ', status: ' + xhr.status);
+	}
+}
+
+console.log("Sending..");
+xhr.send(params);
+*/
+
