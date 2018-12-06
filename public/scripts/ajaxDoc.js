@@ -8,7 +8,7 @@ xhr.onreadystagechange = function() {
 	if()
 };
 */
-
+/*
 window.addEventListener("load", function() {
 	function sendData() {
 		var xhr = new XMLHttpRequest();
@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
 			console.log("Error: " + event);
 		});
 		
-		xhr.open("GET", "/pages/db");
+		xhr.open("POST", "/flashCreate");
 		xhr.send(formData);
 	}
 
@@ -35,7 +35,7 @@ window.addEventListener("load", function() {
 		sendData();
 	});
 });
-
+*/
 /*
 console.log("Beginning AJAX request..");
 var xhr = new XMLHttpRequest();
