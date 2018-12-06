@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
 			console.log("Error: " + event);
 		});
 		
-		xhr.open("POST", "/pages/db");
+		xhr.open("GET", "/pages/db");
 		xhr.send(formData);
 	}
 
