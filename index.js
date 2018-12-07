@@ -18,7 +18,7 @@ express()
   .get('/flashCreate', (req, res) => res.render('pages/flashcardAppCreateNewSet'))
   .post('/flashCreate', urlencodedParser, function(req, res) {
     console.log(req.body)
-    res.render('pages/flashcardAppCreateNewSet')
+    res.render('pages/flashcardAppCreateNewSet-success', {data: req.body})
   })
   .get('/cool', (req, res) => res.send(cool()))
   .get('/times', (req, res) => res.send(showTimes()))
