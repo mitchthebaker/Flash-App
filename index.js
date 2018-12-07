@@ -16,6 +16,9 @@ express()
   .set('view engine', 'ejs')
   .get('/flashHome', (req, res) => res.render('pages/flashcardAppIndex'))
   .get('/flashCreate', (req, res) => res.render('pages/flashcardAppCreateNewSet'))
+  .get('/flashCreate-success', function(req, res) {
+    res.render('pages/flashcardAppCreateNewSet-success')
+  })
   .post('/flashCreate', urlencodedParser, function(req, res) {
     console.log(req.body)
     res.render('pages/flashcardAppCreateNewSet-success', {data: req.body})
