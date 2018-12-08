@@ -22,7 +22,7 @@ function createNewCardDiv() {
 	let newCard = createNewElement("div", {"class": "newCard", "id": "newCard"});
 	
 	newCard.innerHTML = 
-	'<div class="Term-Definition"> <div class="Term"> <input class="newCard-Term" type="text" name="term-' + count + '" placeholder="Term"> <h3 class="Term-h3"> Term </h3> </div> <div class="Definition"> <input class="newCard-Definition" type="text" name="definition-' + count + '" placeholder="Definition"> <h3 class="Definition-h3"> Definition </h3> </div> </div>';
+	'<div class="Term-Definition"> <div class="Term"> <input class="newCard-Term" type="text" name="term' + count + '" placeholder="Term"> <h3 class="Term-h3"> Term </h3> </div> <div class="Definition"> <input class="newCard-Definition" type="text" name="definition' + count + '" placeholder="Definition"> <h3 class="Definition-h3"> Definition </h3> </div> </div>';
 
 	console.log(newCard);
 				
