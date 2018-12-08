@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
 	const MAX_TERM_VALUE = 1000;
 	var count = 1;
 
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	import {sampleData} from '/sampleData.js';
 
 	console.log(sampleData);
-});
 
 
 /*
