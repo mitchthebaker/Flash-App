@@ -234,7 +234,13 @@ input[type="text"].newSetName-Input::placeholder {
 
 .addCardButton {
 	padding: 5px;
+	background-color: white;
+	margin: 10px;
+	border: 0;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	font-weight: 1000;
+	cursor: pointer;
 }
 
 .sendButton {
@@ -253,5 +259,6 @@ input[type="text"].newSetName-Input::placeholder {
 	padding: 10px;
 	font-size: 12px;
 	text-align: center;
+	cursor: pointer;
 }
 
