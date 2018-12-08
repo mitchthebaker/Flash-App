@@ -31,12 +31,10 @@
 	</header>	
 	<div class="container-1">
 		<table>
-			<% for(let i = 0; i < data.length; i++) { %>
-			<% let propTerm = "term-" + i; %>
-			<% let propDef = "definition-" + i; %> 
+			<% for(var key in data) { %>
 				<tr>
-					<td> <%= data[i].propTerm %> </td>
-					<td> <%= data[i].propDef %> </td>
+					<td> <%= key %> </td>
+					<td> <%= data[key] %> </td>
 				</tr>
 			<% } %>
 		</table>

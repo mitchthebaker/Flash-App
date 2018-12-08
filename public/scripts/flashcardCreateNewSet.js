@@ -57,6 +57,31 @@ import {sampleData} from '/sampleData.js';
 
 console.log(sampleData);
 
+
+/*
+The following code below I used to test how a for loop with "key in data1"
+worked, it was extremely useful for helping me iterate through JSON data.
+The next step I need to do though is send this data to the database I 
+currently have instead of having it posted onto the flashcardAppCreateNewSet-success.ejs
+page
+
+var data1 = {
+	"newName": "new set name",
+	"term0": "firstTerm",
+	"def0": "firstDef",
+	"term1": "secondTerm",
+	"def1": "secondDef"
+};
+
+console.log(data1.length);
+console.log(data1.newName);
+console.log(data1["def0"]);
+
+for(var key in data1) {
+	console.log(key, data1[key]);
+}
+*/
+
 /*
 	Just so I remember where I left off last night, I got this do/while
 	loop working so my next step is to include a count that increases incrementally
