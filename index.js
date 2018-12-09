@@ -1,12 +1,12 @@
-const cool = require('cool-ascii-faces')
-const express = require('express')
-const path = require('path')
-const fs = require('fs')
-const bodyParser = require('body-parser')
-const PORT = process.env.PORT || 5001
+const cool = require('cool-ascii-faces');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5001;
 //const app = express(); also works but seems a bit redundant for what I'm doing here
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 express()
   .use(express.static(path.join(__dirname, 'public')))

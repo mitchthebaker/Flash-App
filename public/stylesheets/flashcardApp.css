@@ -262,3 +262,100 @@ input[type="text"].newSetName-Input::placeholder {
 	cursor: pointer;
 }
 
+/*
+	THE CSS BELOW IS INTENDED FOR USE WITHIN THE FILENAME "flashcardAppCreateNewSet-success.ejs"
+	
+	<!--
+		<table>
+			<% for(var key in data) { %>
+				<tr>
+					<td> <%= key %> </td>
+					<td> <%= data[key] %> </td>
+				</tr>
+			<% } %>
+		</table>
+	-->
+
+*/
+
+.div-setName {
+	width: 80%;
+}
+.setName-inSuccessPage {
+	margin: 40px;
+	color: white;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	background-color: grey;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	margin: 10px;
+	cursor: pointer;
+}
+	/* flip the pane when hovered
+
+		1. INCLUDE THIS IF I WANT THE CARD TO FLIP 
+		   WHEN HOVERED: .flip-container:hover .flipper, 
+
+	*/
+	.flip-container.hover .flipper, .flip-container.flip .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 350px;
+	height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.cardButtons {
+	display: inline-block;
+	width: 85%;
+	text-align: center;
+}
+
+.previousButton, .nextButton {
+	background-color: grey;
+	margin: 15px;
+	border: 0;
+	width: 15px;
+	height: 15px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	cursor: pointer;
+}
+
+
+
+

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title> Sucess Page With Data </title>
+	<title> Success Page With Data </title>
 	<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<script type="module" src="sampleData.js" async> </script>
+	<script type="module" src="flipCard.js" async> </script>
 	<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
 
 </head>
@@ -30,13 +32,22 @@
 		</div>
 	</header>	
 	<div class="container-1">
-		<table>
-			<% for(var key in data) { %>
-				<tr>
-					<td> <%= key %> </td>
-					<td> <%= data[key] %> </td>
-				</tr>
-			<% } %>
-		</table>
+		<div class="div-setName">
+			<h3 class="setName-inSuccessPage"> aye </h3>
+		</div>
+		<div class="flip-container">
+			<div class="flipper">
+				<div class="front">
+					<h1 class="frontCard">  </h1>
+				</div>
+				<div class="back">
+					<h1 class="backCard">  </h1>
+				</div>
+			</div>
+		</div>
+		<div class="cardButtons">
+				<button class="previousButton"> </button>
+				<button class="nextButton"> </button>
+		</div>
 	</div> 
 </body>
