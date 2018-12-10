@@ -4,9 +4,6 @@ export var sampleData = {
 	secondWord: "second Definition",
 	thirdWord: "third Definition",
 	fourthWord: "fourth Definition",
-	fifthWord: "fifth Definition",
-	dataExists: function() {
-		console.log("sampleData object: " + sampleData);
-	}
+	fifthWord: "fifth Definition"
 };
 

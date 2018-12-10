@@ -47,11 +47,17 @@
 		return elementClicked;
 	}
 
+	/*
 	do {
 		document.getElementById("addCardButton").addEventListener("click", function() {
 			createNewCardDiv()
 		});
 	} while((count <= MAX_TERM_VALUE) && (submitTF() !== false));
+	*/
+
+	document.getElementById("addCardButton").addEventListener("click", function() {
+			createNewCardDiv()
+		});
 
 	import {sampleData} from '/sampleData.js';
 
