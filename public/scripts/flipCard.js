@@ -45,13 +45,11 @@ function createCardArray(key, value) {
 return keyValue_array;
 }
 
-function ifButtonClicked() {
-
+function clickCard() {
+	document.querySelector(".flip-container").classList.toggle("hover");	
 }
 
-document.querySelector(".flip-container").onclick = function clickCard() {
-	document.querySelector(".flip-container").classList.toggle("hover");	
-};
+document.querySelector(".flip-container").addEventListener("click", clickCard, false);
 
 console.log(createCardArray(key_data, value_data));
 

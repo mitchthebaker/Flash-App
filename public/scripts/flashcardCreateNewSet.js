@@ -55,9 +55,7 @@
 	} while((count <= MAX_TERM_VALUE) && (submitTF() !== false));
 	*/
 
-	document.getElementById("addCardButton").addEventListener("click", function() {
-			createNewCardDiv()
-		});
+	document.querySelector(".addCardButton").addEventListener("click", createNewCardDiv, false);
 
 	import {sampleData} from '/sampleData.js';
 
