@@ -22,13 +22,15 @@ express()
   .post('/flashCreate', urlencodedParser, function(req, res) {
     console.log(req.body)
     res.render('pages/flashcardAppCreateNewSet-success', {data: req.body})
+
+    const client = await pool.connect();
+    client.query('INSERT INTO set_data VALUES(1, 'req.body.term0', 'req.body.definition0')');
+    client.release();
   })
-  .get('/cool', (req, res) => res.send(cool()))
-  .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
   	try {
   		const client = await pool.connect()
-  		const result = await client.query('SELECT * FROM test_table');
+  		const result = await client.query('SELECT * FROM test_table')
   		const results = {
   			'results': (result) ? result.rows : null
   		};
@@ -42,15 +44,6 @@ express()
   	}
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-  showTimes = () => {
-  	let result = ''
-  	const times = process.env.TIMES || 5
-  	for (i = 0; i < times; i++) {
-  		result += i + ' '
-  	}
-  	return result;
-  }
 
   const { Pool } = require('pg');
   const pool = new Pool({
