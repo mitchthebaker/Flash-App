@@ -19,13 +19,9 @@ express()
   .get('/flashCreate-success', function(req, res) {
     res.render('pages/flashcardAppCreateNewSet-success')
   })
-  .post('/flashCreate', urlencodedParser, function(req, res) {
+  .post('/flashCreate', urlencodedParser, async function(req, res) {
     console.log(req.body)
     res.render('pages/flashcardAppCreateNewSet-success', {data: req.body})
-
-    const client = await pool.connect();
-    client.query('INSERT INTO set_data VALUES(1, 'req.body.term0', 'req.body.definition0')');
-    client.release();
   })
   .get('/db', async (req, res) => {
   	try {
