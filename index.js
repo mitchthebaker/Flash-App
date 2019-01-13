@@ -1,14 +1,32 @@
-const cool = require('cool-ascii-faces');
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const uriString = process.env.MONGODB_URI || 'mongodb://localhost/flashapp';
 const PORT = process.env.PORT || 5001;
-//const app = express(); also works but seems a bit redundant for what I'm doing here
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+mongoose.connect(uriString, (err, res) => {
+  if(err) {
+    console.log('ERROR connecting to: ' + uriString + '.' + err);
+  }
+  else {
+    console.log('Successfully connected to: ' + uriString);
+  }
+}, { useNewUrlParser: true });
+
+var setSchema = new mongoose.Schema({
+  setName: String,
+  term: [String],
+  definition: [String]
+});
+var newSet = mongoose.model('newSet', setSchema);
 
 express()
+  .use(bodyParser.json());
+  .use(bodyParser.urlencoded({
+    extended: false
+  }));
   .use(express.static(path.join(__dirname, 'public')))
   .use(express.static(path.join(__dirname, 'public/scripts')))
   .set('views', path.join(__dirname, 'views'))
@@ -19,14 +37,14 @@ express()
   .get('/flashCreate-success', function(req, res) {
     res.render('pages/flashcardAppCreateNewSet-success')
   })
-  .post('/flashCreate', urlencodedParser, async function(req, res) {
+  .post('/flashCreate', async function(req, res) {
     console.log(req.body)
     res.render('pages/flashcardAppCreateNewSet-success', {data: req.body})
   })
   .get('/db', async (req, res) => {
   	try {
   		const client = await pool.connect()
-  		const result = await client.query('SELECT * FROM test_table')
+  		const result = await client.query('SELECT * FROM test_table');
   		const results = {
   			'results': (result) ? result.rows : null
   		};
