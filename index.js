@@ -23,6 +23,30 @@ var setSchema = new mongoose.Schema({
 }, {strict: false});
 var newSet = mongoose.model('newSet', setSchema);
 
+var UserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    requried: true
+  },
+  passwordConf: {
+    type: String,
+    required: true
+  }
+});
+var User = mongoose.model('User', UserSchema);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -60,6 +84,39 @@ app.post('/flashCreate', async function(req, res) {
       //res.render('pages/flashcardAppCreateNewSet-success');
     });
     
+});
+app.get('/', (req, res) => res.render('pages/home'));
+app.post('/login', (req, res) => {
+  if(req.body.email && req.body.username && req.body.password && req.body.passwordConf) {
+    /*
+    var userData = {
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password,
+      passwordConf: req.body.passwordConf
+    };
+
+    User.create(userData, function (err, user) {
+    if (err) {
+      return next(err)
+    } else {
+      return res.json(user);
+    }
+    });
+    */
+    var userData = new User(req.body);
+
+    userData.save((err, user) => {
+      if(err) {
+        res.send('Something went wrong here..');
+        console.log(err);
+      }
+      else {
+        //return res.redirect('/profile');
+        res.json(user);
+      }
+    });
+  }
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 

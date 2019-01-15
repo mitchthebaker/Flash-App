@@ -1,170 +1,171 @@
 <!DOCTYPE html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title> Success Page With Data </title>
-	<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<script type="module" src="sampleData.js" async> </script>
-	<script> 
-		document.addEventListener('DOMContentLoaded', () => {
-			//Sample data that I am using to test the flash card with
-			//import {sampleData} from '/sampleData.js';
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title> Success Page With Data </title>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<script type="module" src="sampleData.js" async> </script>
+		<script> 
+			document.addEventListener('DOMContentLoaded', () => {
+				//Sample data that I am using to test the flash card with
+				//import {sampleData} from '/sampleData.js';
 
-			/* The 4 variables below are queried to their respective element tags,
-			 * the previousButton/nextButton variables are used to iterate back
-			 * and forth between each set of key/value pairs within the JSON data
-			 * that is being used, the frontCard/backCard variables represent the 
-			 * data being displayed on the front/back card <h1> elements 
-			 */
-			var query = {
-				previousButton: document.querySelector(".previousButton"),
-				nextButton: document.querySelector(".nextButton"),
-				frontCard: document.querySelector(".frontCard"),
-				backCard: document.querySelector(".backCard")
-			};
+				/* The 4 variables below are queried to their respective element tags,
+				 * the previousButton/nextButton variables are used to iterate back
+				 * and forth between each set of key/value pairs within the JSON data
+				 * that is being used, the frontCard/backCard variables represent the 
+				 * data being displayed on the front/back card <h1> elements 
+				 */
+				var query = {
+					previousButton: document.querySelector(".previousButton"),
+					nextButton: document.querySelector(".nextButton"),
+					frontCard: document.querySelector(".frontCard"),
+					backCard: document.querySelector(".backCard")
+				};
 
-			/* I use arrayCount as my main iterator in order to go through the 
-			 * keyValue_array array, which is a 2D array containing the keys from
-			 * sampleData represented as key_data, and the values from sampleData
-			 * represented as value_data
-			 */
-			var flipData = {
-				strData: <%- JSON.stringify(data) %>,
-				arrayCount: 0,
-				key_data: function() {
-					return Object.keys(this.strData).slice(2, Object.keys(this.strData).length - 1);
-				},
-				value_data: function() {
-					return Object.values(this.strData).slice(2, Object.values(this.strData).length - 1);
-				},
-				keyValue_array: []
-			};
+				/* I use arrayCount as my main iterator in order to go through the 
+				 * keyValue_array array, which is a 2D array containing the keys from
+				 * sampleData represented as key_data, and the values from sampleData
+				 * represented as value_data
+				 */
+				var flipData = {
+					strData: <%- JSON.stringify(data) %>,
+					arrayCount: 0,
+					key_data: function() {
+						return Object.keys(this.strData).slice(2, Object.keys(this.strData).length - 1);
+					},
+					value_data: function() {
+						return Object.values(this.strData).slice(2, Object.values(this.strData).length - 1);
+					},
+					keyValue_array: []
+				};
 
-			console.log(flipData.strData);
-			console.log(flipData.key_data());
-			console.log(flipData.value_data());
+				console.log(flipData.strData);
+				console.log(flipData.key_data());
+				console.log(flipData.value_data());
 
-			/* The below I was using as tests previously
-			 * console.log(key_data);
-			 * console.log(value_data);
-			 *
-			 * for(let key in sampleData) {
-			 * 	   console.log("Key name: " + key);
-			 *	   console.log("Key's value: " + sampleData[key]);
-			 * }
-			 *
-			 * console.log(createCardArray(key_data, value_data));
-			*/
+				/* The below I was using as tests previously
+				 * console.log(key_data);
+				 * console.log(value_data);
+				 *
+				 * for(let key in sampleData) {
+				 * 	   console.log("Key name: " + key);
+				 *	   console.log("Key's value: " + sampleData[key]);
+				 * }
+				 *
+				 * console.log(createCardArray(key_data, value_data));
+				*/
 
-			function createCardArray(key, value) {
-				for(let i = 0; i < key.length; i += 2) {
-					let tempArray = [];
-					tempArray.push(value[i]);
-					tempArray.push(value[i + 1]);
+				function createCardArray(key, value) {
+					for(let i = 0; i < key.length; i += 2) {
+						let tempArray = [];
+						tempArray.push(value[i]);
+						tempArray.push(value[i + 1]);
 
-					flipData.keyValue_array.push(tempArray);
-			}
-			return flipData.keyValue_array;
-			}
-
-			document.querySelector('.flip-container').addEventListener('click', function clickCard() {
-				document.querySelector('.flip-container').classList.toggle('hover');
-			}, false);
-
-			console.log(createCardArray(flipData.key_data(), flipData.value_data()));
-
-			query.frontCard.textContent = flipData.keyValue_array[0][0];
-			query.backCard.textContent = flipData.keyValue_array[0][1];
-
-			document.getElementById('cardButtons').addEventListener('click', (event) => {
-				var target = event.target;
-
-				if(target.id === 'previousButton') {
-					console.log(flipData.arrayCount);
-					if((query.frontCard.textContent == flipData.keyValue_array[0][0]) && (query.backCard.textContent == flipData.keyValue_array[0][1])) {
-						flipData.arrayCount = 0;
-						console.log(flipData.arrayCount);
-					} else {
-						flipData.arrayCount--;
-						console.log(flipData.arrayCount);
-						query.frontCard.textContent = flipData.keyValue_array[flipData.arrayCount][0];
-						query.backCard.textContent = flipData.keyValue_array[flipData.arrayCount][1];
-					}
-					
-				} else if(target.id === 'nextButton') {
-					/* Take not of line 83 and the second test statement within the if statement
-					console.log(arrayCount);
-					console.log(keyValue_array[key_data.length -1][1]);
-					console.log(backCard.textContent);
-					*/
-					if(flipData.arrayCount == flipData.keyValue_array.length - 1) {
-						flipData.arrayCount == flipData.keyValue_array.length - 1;
-						console.log(flipData.arrayCount);
-					} else {
-						flipData.arrayCount++;
-						query.frontCard.textContent = flipData.keyValue_array[flipData.arrayCount][0];
-						query.backCard.textContent = flipData.keyValue_array[flipData.arrayCount][1];
-						console.log(flipData.arrayCount);
-					}
-				} else {
-					console.log("You've reached an error, check out your code");
+						flipData.keyValue_array.push(tempArray);
 				}
-			}, false);
-		});
-	</script>
-	<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
+				return flipData.keyValue_array;
+				}
 
-</head>
-<body>
-	<header class="headerActivityPage">
-		<div class="nameOfSite">
-			<a class="nameOfSite-a" href="/flashHome"> 
-				<h1 class="nameOfSite-h1"> Flashcard App </h1>		
-			</a>
-		</div>
-		<div class="newSets-navBar">
-			<div class="createNewSet">
-				<a class="createNewSet-a" href="/flashCreate"> 
-					<button class="dropbtn"> <i class="far fa-plus-square"></i>
-					</button>
+				document.querySelector('.flip-container').addEventListener('click', function clickCard() {
+					document.querySelector('.flip-container').classList.toggle('hover');
+				}, false);
+
+				console.log(createCardArray(flipData.key_data(), flipData.value_data()));
+
+				query.frontCard.textContent = flipData.keyValue_array[0][0];
+				query.backCard.textContent = flipData.keyValue_array[0][1];
+
+				document.getElementById('cardButtons').addEventListener('click', (event) => {
+					var target = event.target;
+
+					if(target.id === 'previousButton') {
+						console.log(flipData.arrayCount);
+						if((query.frontCard.textContent == flipData.keyValue_array[0][0]) && (query.backCard.textContent == flipData.keyValue_array[0][1])) {
+							flipData.arrayCount = 0;
+							console.log(flipData.arrayCount);
+						} else {
+							flipData.arrayCount--;
+							console.log(flipData.arrayCount);
+							query.frontCard.textContent = flipData.keyValue_array[flipData.arrayCount][0];
+							query.backCard.textContent = flipData.keyValue_array[flipData.arrayCount][1];
+						}
+						
+					} else if(target.id === 'nextButton') {
+						/* Take not of line 83 and the second test statement within the if statement
+						console.log(arrayCount);
+						console.log(keyValue_array[key_data.length -1][1]);
+						console.log(backCard.textContent);
+						*/
+						if(flipData.arrayCount == flipData.keyValue_array.length - 1) {
+							flipData.arrayCount == flipData.keyValue_array.length - 1;
+							console.log(flipData.arrayCount);
+						} else {
+							flipData.arrayCount++;
+							query.frontCard.textContent = flipData.keyValue_array[flipData.arrayCount][0];
+							query.backCard.textContent = flipData.keyValue_array[flipData.arrayCount][1];
+							console.log(flipData.arrayCount);
+						}
+					} else {
+						console.log("You've reached an error, check out your code");
+					}
+				}, false);
+			});
+		</script>
+		<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
+	</head>
+	<body>
+		<header class="headerActivityPage">
+			<div class="nameOfSite">
+				<a class="nameOfSite-a" href="/flashHome"> 
+					<h1 class="nameOfSite-h1"> Flashcard App </h1>		
 				</a>
 			</div>
-			<div class="sideNavBar">
-				<a class="sideNavBar-a" href="">
-					<button class="dropbtn"> <i class="fas fa-bars"></i> 
-					</button>
-				</a>
-			</div>
-		</div>
-	</header>	
-	<div class="container-1">
-		<!-- Test ejs values for data that is being sent
-		<ul>
-     		<li> <%= data.setName %> </li>
-     		<li> <%= data.term0 %> </li>
-     		<li> <%= data.definition0 %> </li>
-     		<li> <%= JSON.stringify(data) %> </li>
-     		<li> <%= keys %> </li>
-     		<li> <%= values %> </li>
-     		<li> <%= length %> </li>
-		</ul>
-		-->
-		<div class="div-setName">
-			<h3 class="setName-inSuccessPage"> <%= data.setName %> </h3>
-		</div>
-		<div class="flip-container">
-			<div class="flipper">
-				<div class="front">
-					<h1 class="frontCard">  </h1>
+			<div class="newSets-navBar">
+				<div class="createNewSet">
+					<a class="createNewSet-a" href="/flashCreate"> 
+						<button class="dropbtn"> <i class="far fa-plus-square"></i>
+						</button>
+					</a>
 				</div>
-				<div class="back">
-					<h1 class="backCard">  </h1>
+				<div class="sideNavBar">
+					<a class="sideNavBar-a" href="">
+						<button class="dropbtn"> <i class="fas fa-bars"></i> 
+						</button>
+					</a>
 				</div>
 			</div>
-		</div>
-		<div id="cardButtons" class="cardButtons">
-				<button id="previousButton" class="previousButton"> </button>
-				<button id="nextButton" class="nextButton"> </button>
-		</div>
-	</div> 
-</body>
+		</header>	
+		<div class="container-1">
+			<!-- Test ejs values for data that is being sent
+			<ul>
+	     		<li> <%= data.setName %> </li>
+	     		<li> <%= data.term0 %> </li>
+	     		<li> <%= data.definition0 %> </li>
+	     		<li> <%= JSON.stringify(data) %> </li>
+	     		<li> <%= keys %> </li>
+	     		<li> <%= values %> </li>
+	     		<li> <%= length %> </li>
+			</ul>
+			-->
+			<div class="div-setName">
+				<h3 class="setName-inSuccessPage"> <%= data.setName %> </h3>
+			</div>
+			<div class="flip-container">
+				<div class="flipper">
+					<div class="front">
+						<h1 class="frontCard">  </h1>
+					</div>
+					<div class="back">
+						<h1 class="backCard">  </h1>
+					</div>
+				</div>
+			</div>
+			<div id="cardButtons" class="cardButtons">
+					<button id="previousButton" class="previousButton"> </button>
+					<button id="nextButton" class="nextButton"> </button>
+			</div>
+		</div> 
+	</body>
+</html>
