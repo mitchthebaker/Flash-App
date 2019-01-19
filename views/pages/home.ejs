@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
 	<title> Create New Set </title>
 	<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -133,6 +133,23 @@
 				}, false);
 			});
 		</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			function hasClass(element, cls) {
+				return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
+			}
+
+			document.querySelector('.home-logOn-div-bottom').addEventListener('click', function() {
+				if(!(hasClass(document.querySelector('.register-bar'), 'register-bar-show'))) {
+					console.log('opening register bar');
+					document.querySelector('.register-bar').classList.add('register-bar-show');
+				} else {
+					console.log('closing register bar');
+					document.querySelector('.register-bar').classList.remove('register-bar-show');
+				}
+			});
+		});
+	</script>
 	<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
 </head>
 <body>
@@ -180,6 +197,7 @@
 					Using the built-in study interface of FlashPass, <br> studying is made easy.
 				</h3>
 				<div class="home-img-separator">
+				</div>
 			</figcaption>
 			<figcaption class="home-logOn-explain-div-1">
 				<h3 class="home-logOn-explain-1">
@@ -244,6 +262,25 @@
 					<button id="nextButton-home" class="nextButton-home"> <i id="nextButton-home" class="fas fa-chevron-right"></i> </button>
 			</div>
 		</div>
+		<figure class="inner-container-3">
+			<div class="home-logOn-div-bottom">
+				<h3 class="home-logOn-register">
+					Sign up for a free account today !
+				</h3>
+			</div>
+			<img class="third-img" src="/images/IMG_3138.JPG" alt="SF Pink Flower"/>
+			<figcaption class="register-bar">
+				<form class="register-form">
+					<input id="register-email" class="register-email" type="text" name="email" placeholder="Email"/>
+					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username"/>
+					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password"/>
+					<input id="register-passConf" class="register-passConf" type="text" name="passwordConf" placeholder="Confirm password"/>
+					<input id="register-submit" class="register-submit" type="submit" placeholder="Email"/>
+				</form>
+			</figcaption>
+		</figure>
+		<footer class="footer-home">
+		</footer>
 	</div>
 </body>
 </html>

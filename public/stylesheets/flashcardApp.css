@@ -456,6 +456,14 @@ input[type="text"].newSetName-Input::placeholder {
 	margin: 0px;
 }
 
+.inner-container-3 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin: 0px;
+}
+
 a {
 	text-decoration: none;
 	color: white;
@@ -479,6 +487,7 @@ a {
 	font-size: 18px;
 	color: white;
 	white-space: nowrap;
+	font-weight: bold;
 
 	/*color: #3E3E3E;*/
 }
@@ -497,6 +506,7 @@ a {
 	text-align: center;
 	font-size: 14px;
 	color: white;
+	font-weight: normal;
 }
 
 .second-img {
@@ -516,6 +526,10 @@ a {
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
+}
+
+.home-logOn-explain-div h3 {
+	font-weight: lighter;
 }
 
 .home-logOn-register {
@@ -540,11 +554,13 @@ a {
 }
 
 .home-logOn-explain-1 {
-	font-size: 13px;
-	font-family: 'Montserrat', sans-serif;
+	margin-top: 8px;
+	font-size: 16px;
+	font-family: 'Thasadith', sans-serif;
 	color: white;
 	text-align: center;
 	white-space: nowrap;
+	font-weight: bold;
 }
 
 .home-logOn-div {
@@ -575,6 +591,7 @@ a {
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
+	border-top: solid white 5px;
 	border-bottom: solid white 5px;
 }
 
@@ -716,6 +733,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .cardButtons-home {
 	width: 75%;
 	text-align: center;
+	margin-bottom: 60px;
 }
 
 .previousButton-home, .nextButton-home {
@@ -753,6 +771,73 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	margin-left: auto;
 }
 
+.home-logOn-div-bottom {
+	background-color: #E00F47;
+	width: 75%;
+	height: 40px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	margin-top: 0px;
+	border: solid white 1px;
+	border-radius: 2px;
+	z-index: 10;
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	/*background: rgba(204, 204, 204, 0.3);*/
+}
+
+.home-logOn-div-bottom h3 {
+	font-size: 20px;
+	font-weight: bolder;
+	margin: 0;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.register-bar {
+	width: 75%;
+	height: 0px;
+	border-radius: 2px;
+	margin: 200px auto;
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	border: solid white 1px;
+	background: rgba(204, 204, 204, 0.3);
+	visibility: hidden;
+	opacity: 0;
+	transition: height 600ms ease;
+}
+
+.register-bar-show {
+	opacity: 1;
+	visibility: visible;
+	height: 360px;
+}
+
+.register-form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.register-form input {
+	width: 85%;
+	margin: 10px;
+	background-color: transparent;
+	border: solid white 1px;
+	color: white;
+}
+
+.footer-home {
+	width: 100%;
+	height: 400px;
+}
+
 
 /* MEDIA QUERIES */
 
@@ -766,6 +851,11 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 
 .Definition-home {
 	width: 39%;
+}
+
+.register-bar-show {
+	height: 240px;
+	margin: 135px auto;
 }
 	
 }
