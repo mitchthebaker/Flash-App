@@ -148,6 +148,42 @@
 					document.querySelector('.register-bar').classList.remove('register-bar-show');
 				}
 			});
+
+			document.querySelector('.signUp-a').addEventListener('click', function() {
+				if(!hasClass(document.querySelector('.register-bar-header', 'register-bar-header-show'))) {
+					console.log('opening register bar from the header <a> tag');
+					document.querySelector('.register-bar-header').classList.add('register-bar-header-show');
+				} else {
+					console.log('closing register bar from the header <a> tag');
+					document.querySelector('.register-bar-header').classList.remove('register-bar-header-show');
+				}
+			});
+
+			document.querySelector('.register-bar-header-exit').addEventListener('click', function() {
+				document.querySelector('.register-bar-header').classList.remove('register-bar-header-show');
+			});
+
+			var scroll = {
+				position: window.scrollY,
+				header: document.querySelector('.headerActivityPage-home'),
+				addOnScroll: function() {
+					scroll.header.classList.add('headerActivityPage-home-scroll');
+				},
+				removeOnScroll: function() {
+					scroll.header.classList.remove('headerActivityPage-home-scroll');
+				}
+			};
+
+			window.addEventListener('scroll', function() {
+				scroll.position = window.scrollY;
+
+				if(scroll.position > 50) {
+					scroll.addOnScroll();
+				} else {
+					scroll.removeOnScroll();
+				}
+				//console.log('Current scroll position for header: ' + scroll.position);
+			});
 		});
 	</script>
 	<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
@@ -164,16 +200,16 @@
 				</div>
 				<div class="newSets-navBar">
 					<div class="login-signUp">
-						<a class="login-a" href="">
+						<div class="login-a">
 							<h3 class="inner-login">
 								Login
 							</h3>
-						</a>
-						<a class="signUp-a" href="">
+						</div>
+						<div class="signUp-a">
 							<h3 class="inner-signUp">
 								Sign up
 							</h3>
-						</a>
+						</div>
 					</div>
 				</div>
 			</header>
@@ -275,10 +311,22 @@
 					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username"/>
 					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password"/>
 					<input id="register-passConf" class="register-passConf" type="text" name="passwordConf" placeholder="Confirm password"/>
-					<input id="register-submit" class="register-submit" type="submit" placeholder="Email"/>
+					<input id="register-submit" class="register-submit" type="submit" value="Sign Up"/>
+					<button class="register-login"> Already registered? <a id="register-login-click" href=""> Login </a> </button> 
 				</form>
 			</figcaption>
 		</figure>
+		<div class="register-bar-header">
+			<p class="register-bar-header-exit"> <i class="fas fa-times"></i> </p>
+			<form class="register-form-header">
+				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email"/>
+				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username"/>
+				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password"/>
+				<input id="register-passConf-header" class="register-passConf-header" type="text" name="passwordConf" placeholder="Confirm password"/>
+				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
+				<button class="register-login-header"> Already registered? <a id="register-login-click-header" href=""> Login </a> </button> 
+			</form>
+		</div>
 		<footer class="footer-home">
 		</footer>
 	</div>
