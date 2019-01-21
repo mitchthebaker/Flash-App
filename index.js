@@ -25,61 +25,6 @@ var setSchema = new mongoose.Schema({
 }, {strict: false});
 var newSet = mongoose.model('newSet', setSchema);
 
-var UserSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-    trim: true
-  },
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-    trim: true
-  },
-  password: {
-    type: String,
-    requried: true
-  },
-  passwordConf: {
-    type: String,
-    required: true
-  }
-});
-UserSchema.pre('save', function(next) {
-  var user = this;
-      
-  if(!user.isModified('password')) {
-    return next();
-  }   
-
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-    if(err) {
-      return next(err);
-    }
-
-    bcrypt.hash(user.password, salt, function(err, hash) {
-      if(err) {
-        return next(err);
-      }
-
-      user.password = hash;
-      next();
-    });
-  });
-});
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if(err) {
-      return cb(err);
-    }
-
-    cb(null, isMatch);
-  });
-}
-var User = mongoose.model('User', UserSchema);
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -119,7 +64,7 @@ app.post('/flashCreate', async function(req, res) {
     
 });
 app.get('/', (req, res) => res.render('pages/home'));
-app.post('/login', (req, res) => {
+app.post('/', (req, res) => {
   if(req.body.email && req.body.username && req.body.password && req.body.passwordConf) {
     /*
     var userData = {
