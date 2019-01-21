@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const uriString = process.env.MONGODB_URI || 'mongodb://localhost/flashapp';
 const PORT = process.env.PORT || 5001;
 const app = express();
@@ -15,6 +16,21 @@ mongoose.connect(uriString, (err, res) => {
     console.log('Successfully connected to: ' + uriString);
   }
 }, { useNewUrlParser: true });
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Connection error: '));
+db.once('open', function() {
+  console.log('DB ready');
+});
+
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
 
 var setSchema = new mongoose.Schema({
   setName: String,
