@@ -1,6 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 var User = require('../models/user');
+var newSet = require('../models/set');
 
 //GET route for the home page
 router.get('/', (req, res) => res.render('pages/home'));
@@ -8,7 +9,11 @@ router.get('/', (req, res) => res.render('pages/home'));
 //POST route for the home page, potential data is for users 
 //wishing to register an account.
 router.post('/', (req, res) => {
-  if(req.body.email && req.body.username && req.body.password && req.body.passwordConf) {
+  if(req.body.email && 
+  	 req.body.username && 
+  	 req.body.password && 
+  	 req.body.passwordConf) {
+
     var userData = new User(req.body);
 
     userData.save((err, user) => {
@@ -17,11 +22,31 @@ router.post('/', (req, res) => {
         console.log(err);
       }
       else {
-        //return res.redirect('/profile');
-        res.json(user);
+      	req.session.userId = user._id;
+        return res.redirect('/profile');
       }
     });
   }
+});
+
+//GET route for after a user registers/logs on
+router.get('/profile', function(req, res) {
+	User.findById(req.session.userId)
+		.exec(function(err, user) {
+			if(err) {
+				return next(err);
+			}
+			else {
+				if(user === null) {
+					let err = new Error('Not authorized! Try again.');
+					err.status = 400;
+					return next(err);
+				}
+				else {
+					res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+				}
+			}
+		});
 });
 
 //GET route for flashHome
@@ -61,6 +86,24 @@ router.post('/flashCreate', async function(req, res) {
 router.get('/flashCreate-success', function(req, res) {
     res.render('pages/flashcardAppCreateNewSet-success');
 });
+
+//GET route for logging out a user, destroying session and 
+// returning them back to the home page
+router.get('/logout', function(req, res) {
+	if(req.session) {
+		//Deletes the current session object
+		req.session.destroy(function(err) {
+			if(err) {
+				return next(err);
+			}
+			else {
+				return res.redirect('/');
+			}
+		});
+	}
+});
+
+module.exports = router;
 
 /* Previous code in index.js for reference:
 
