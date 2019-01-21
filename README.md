@@ -1,39 +1,20 @@
-# node-js-getting-started
+# Welcome to Flash-App, the repository for the flashcard study application FlashPass!
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+FlashPass is still currently in development. In fact, there is quite a lot to finish 
+for the project as of right now. 
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+## Current Objectives for FlashPass include:
 
-## Running Locally
+1. Fixing bugs and any further tweaks for the homepage, home.ejs.
+2. Browser size adjustments using media queries. (Currently, the application is being 
+   developed for mobile browser sizes. The application will continue to be improved as 
+   time goes on)
+3. Setting up the back-end to register new users with their respective accounts.
+4. Further application changes and adjustments.
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+## If interested in looking at the current status of the FlashPass application, check out the link below.
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
+FlashPass is currently being hosted online by Heroku. 
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+Navigate to the homepage using this link:
+https://flashpass.herokuapp.com/
