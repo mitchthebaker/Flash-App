@@ -365,9 +365,7 @@ input[type="text"].newSetName-Input::placeholder {
 	flex-direction: row;
 	align-items: flex-end;
 	align-content: center;
-	top: 0;
-	left: 0;
-	width: 100%;
+	width: 100vw;
 	height: 50px;
 	z-index: 15;
 	background-color: none;
