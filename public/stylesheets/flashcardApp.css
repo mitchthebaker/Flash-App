@@ -759,14 +759,14 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .cardButtons-home {
 	width: 75%;
 	text-align: center;
+	margin-top: 30px;
 	margin-bottom: 60px;
-	margin-right: 10px;
 }
 
 
 .previousButton-home, .nextButton-home {
 	background-color: transparent;
-	margin: 0 20px 30px 20px;
+	margin: 20px 20px 30px 20px;
 	padding: 20px;
 	border: 0;
 	width: 15px;
