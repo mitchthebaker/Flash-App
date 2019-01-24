@@ -361,11 +361,24 @@ input[type="text"].newSetName-Input::placeholder {
 
 /* CSS for home.ejs */
 
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	width: 95vw;
+	height: 40px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-top: solid white 1px;
+	border-bottom: solid white 1px;
+}
+
 .headerActivityPage-home {
 	display: flex;
 	position: fixed;
-	flex-direction: row;
-	align-items: flex-end;
+	flex-direction: column;
+	align-items: center;
 	align-content: center;
 	width: 100%;
 	height: 50px;
@@ -380,8 +393,9 @@ input[type="text"].newSetName-Input::placeholder {
 }
 
 .keyline-home-0, .keyline-home-1 {
-	margin: 0 auto;
 	position: fixed;
+	top: 50%;
+	left: 50%;
 	width: 95vw;
 	height: 1px;
 	z-index: 20;
