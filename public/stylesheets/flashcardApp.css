@@ -361,6 +361,13 @@ input[type="text"].newSetName-Input::placeholder {
 
 /* CSS for home.ejs */
 
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+}
+
 .headerActivityPage-home {
 	display: flex;
 	position: fixed;
@@ -380,6 +387,7 @@ input[type="text"].newSetName-Input::placeholder {
 }
 
 .keyline-home-0, .keyline-home-1 {
+
 	position: fixed;
 	width: 95%;
 	height: 1px;
