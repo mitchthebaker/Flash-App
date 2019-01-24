@@ -27,6 +27,24 @@ router.post('/', (req, res) => {
       }
     });
   }
+  else if(req.body.logemail && req.body.logpassword) {
+  	User.authenticate(req.body.logemail, req.body.logpassword, function(error, user) {
+  		if(error || !user) {
+  			let err = new Error('Wrong email or password');
+  			err.status = 401;
+  			return res.redirect('/');
+  		}
+  		else {
+  			req.session.userId = user._id;
+  			return res.redirect('/profile');
+  		}
+  	});
+  }
+  else {
+  	let err = new Error('All fields must be entered in order to continue.');
+  	err.status = 400;
+  	return next(err);
+  }
 });
 
 //GET route for after a user registers/logs on

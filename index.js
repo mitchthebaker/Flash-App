@@ -4,6 +4,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const flash = require('connect-flash');
 const MongoStore = require('connect-mongo')(session);
 const uriString = process.env.MONGODB_URI || 'mongodb://localhost/flashapp';
 const PORT = process.env.PORT || 5001;
@@ -35,6 +36,9 @@ app.use(session({
     mongooseConnection: db
   })
 }));
+
+//Allow flash() method to be used
+app.use(flash());
 
 //Use bodyParser to utilize it's respective methods
 app.use(bodyParser.json());

@@ -1,192 +1,13 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 	<meta name="viewport" content="width=device-width, user-scalable=no"/>
 	<title> Create New Set </title>
 	<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<script> 
-			document.addEventListener('DOMContentLoaded', () => {
-				//Sample data that I am using to test the flash card with
-				//import {sampleData} from '/sampleData.js';
-
-				/* The 4 variables below are queried to their respective element tags,
-				 * the previousButton/nextButton variables are used to iterate back
-				 * and forth between each set of key/value pairs within the JSON data
-				 * that is being used, the frontCard/backCard variables represent the 
-				 * data being displayed on the front/back card <h1> elements 
-				 */
-				var query = {
-					previousButton: document.querySelector(".previousButton-home"),
-					nextButton: document.querySelector(".nextButton-home"),
-					frontCard: document.querySelector(".frontCard-home"),
-					backCard: document.querySelector(".backCard-home")
-				};
-
-				/* I use arrayCount as my main iterator in order to go through the 
-				 * keyValue_array array, which is a 2D array containing the keys from
-				 * sampleData represented as key_data, and the values from sampleData
-				 * represented as value_data
-				 */
-
-				var homeData = {
-					term0: 'Your first term example here',
-					definition0: 'You flipped the card, nice! Here is the first definition',
-					term1: 'Your second term example here',
-					definition1: "You're getting the hang of this! Here is the second definition.",
-					terms: function() {
-						let termArray = [];
-						termArray.push(this.term0);
-						termArray.push(this.term1);
-						return termArray;
-					},
-					definitions: function() {
-						let defArray = [];
-						defArray.push(this.definition0);
-						defArray.push(this.definition1);
-						return defArray;
-					},
-					keyValue_array: [],
-					arrayCount: 0
-				};
-
-				console.log(homeData.terms());
-				console.log(homeData.definitions());
-
-				document.getElementById('sendButton-home').addEventListener('click', function sendClick() {
-						console.log('Example data submitted');
-						homeData.term0 = document.getElementById('term0').value;
-						homeData.definition0 = document.getElementById('definition0').value;
-						homeData.term1 = document.getElementById('term1').value;
-						homeData.definition1 = document.getElementById('definition1').value;
-						homeData.keyValue_array = [];
-						console.log(createCardArray(homeData.terms(), homeData.definitions()));
-
-						query.frontCard.textContent = homeData.keyValue_array[0][0];
-						query.backCard.textContent = homeData.keyValue_array[0][1];
-				});
-
-				/* The below I was using as tests previously
-				 * console.log(key_data);
-				 * console.log(value_data);
-				 *
-				 * for(let key in sampleData) {
-				 * 	   console.log("Key name: " + key);
-				 *	   console.log("Key's value: " + sampleData[key]);
-				 * }
-				 *
-				 * console.log(createCardArray(key_data, value_data));
-				*/
-
-				function createCardArray(key, value) {
-					for(let i = 0; i < key.length; i++) {
-						let tempArray = [];
-						tempArray.push(key[i]);
-						tempArray.push(value[i]);
-
-						homeData.keyValue_array.push(tempArray);
-				}
-				return homeData.keyValue_array;
-				}
-
-				document.querySelector('.flip-container-home').addEventListener('click', function clickCard() {
-					document.querySelector('.flip-container-home').classList.toggle('hover');
-				}, false);
-
-				console.log(createCardArray(homeData.terms(), homeData.definitions()));
-
-				query.frontCard.textContent = homeData.keyValue_array[0][0];
-				query.backCard.textContent = homeData.keyValue_array[0][1];
-
-				document.querySelector('.cardButtons-home').addEventListener('click', (event) => {
-					var target = event.target;
-					console.log(target);
-					if(target.id === 'previousButton-home') {
-						if(homeData.arrayCount == 0) {
-							homeData.arrayCount = 0;
-							console.log(homeData.arrayCount);
-						} else {
-							homeData.arrayCount--;
-							console.log(homeData.arrayCount);
-							query.frontCard.textContent = homeData.keyValue_array[homeData.arrayCount][0];
-							query.backCard.textContent = homeData.keyValue_array[homeData.arrayCount][1];
-						}
-						
-					} else if(target.id === 'nextButton-home') {
-						/* Take not of line 83 and the second test statement within the if statement
-						console.log(arrayCount);
-						console.log(keyValue_array[key_data.length -1][1]);
-						console.log(backCard.textContent);
-						*/
-						if(homeData.arrayCount == homeData.keyValue_array.length - 1) {
-							homeData.arrayCount == homeData.keyValue_array.length - 1;
-							console.log(homeData.arrayCount);
-						} else {
-							homeData.arrayCount++;
-							query.frontCard.textContent = homeData.keyValue_array[homeData.arrayCount][0];
-							query.backCard.textContent = homeData.keyValue_array[homeData.arrayCount][1];
-							console.log(homeData.arrayCount);
-						}
-					} else {
-						console.log("You've reached an error, check out your code");
-					}
-				}, false);
-			});
-		</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			function hasClass(element, cls) {
-				return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
-			}
-
-			document.querySelector('.home-logOn-div-bottom').addEventListener('click', function() {
-				if(!(hasClass(document.querySelector('.register-bar'), 'register-bar-show'))) {
-					console.log('opening register bar');
-					document.querySelector('.register-bar').classList.add('register-bar-show');
-				} else {
-					console.log('closing register bar');
-					document.querySelector('.register-bar').classList.remove('register-bar-show');
-				}
-			});
-
-			document.querySelector('.signUp-a').addEventListener('click', function() {
-				if(!hasClass(document.querySelector('.register-bar-header', 'register-bar-header-show'))) {
-					console.log('opening register bar from the header <a> tag');
-					document.querySelector('.register-bar-header').classList.add('register-bar-header-show');
-				} else {
-					console.log('closing register bar from the header <a> tag');
-					document.querySelector('.register-bar-header').classList.remove('register-bar-header-show');
-				}
-			});
-
-			document.querySelector('.register-bar-header-exit').addEventListener('click', function() {
-				document.querySelector('.register-bar-header').classList.remove('register-bar-header-show');
-			});
-
-			var scroll = {
-				position: window.scrollY,
-				header: document.querySelector('.headerActivityPage-home'),
-				addOnScroll: function() {
-					scroll.header.classList.add('headerActivityPage-home-scroll');
-				},
-				removeOnScroll: function() {
-					scroll.header.classList.remove('headerActivityPage-home-scroll');
-				}
-			};
-
-			window.addEventListener('scroll', function() {
-				scroll.position = window.scrollY;
-
-				if(scroll.position > 50) {
-					scroll.addOnScroll();
-				} else {
-					scroll.removeOnScroll();
-				}
-				//console.log('Current scroll position for header: ' + scroll.position);
-			});
-		});
-	</script>
-	<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
+	<script src="exCard-home.js" async> </script> 
+	<script src="events-home.js" async> </script>
+	<script src="passCheck.js" async> </script>
 </head>
 <body>
 	<div class="home-container">
@@ -306,25 +127,31 @@
 			</div>
 			<img class="third-img" src="/images/IMG_3138.JPG" alt="SF Pink Flower"/>
 			<figcaption class="register-bar">
-				<form class="register-form" method="POST" action="/">
-					<input id="register-email" class="register-email" type="text" name="email" placeholder="Email"/>
-					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username"/>
-					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password"/>
-					<input id="register-passConf" class="register-passConf" type="text" name="passwordConf" placeholder="Confirm password"/>
+				<form class="register-form" class="validate" method="POST" action="/">
+					<input id="register-email" class="register-email" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
+					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
 					<input id="register-submit" class="register-submit" type="submit" value="Sign Up"/>
-					<button class="register-login"> Already registered? <a id="register-login-click" href=""> Login </a> </button> 
+					<div class="register-login"> Already registered? <span id="register-login-click"> Login </span> </div>
+					<!-- <input id="register-passConf" class="register-passConf" type="text" name="passwordConf" placeholder="Confirm password" required data-value-missing="This field is required!"/> -->
 				</form>
 			</figcaption>
 		</figure>
 		<div class="register-bar-header">
 			<p class="register-bar-header-exit"> <i class="fas fa-times"></i> </p>
-			<form class="register-form-header" method="POST" action="/">
+			<form class="register-form-header" class="validate" method="POST" action="/" >
 				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email"/>
 				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username"/>
 				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password"/>
-				<input id="register-passConf-header" class="register-passConf-header" type="text" name="passwordConf" placeholder="Confirm password"/>
 				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
-				<button class="register-login-header"> Already registered? <a id="register-login-click-header" href=""> Login </a> </button> 
+			</form>
+		</div>
+		<div class="login-bar-header">
+			<p class="login-bar-header-exit"> <i class="fas fa-times"></i> </p>
+			<form class="login-form-header" class="validate" method="POST" action="/">
+				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email"/>
+				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password"/>
+				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now"/>
 			</form>
 		</div>
 		<footer class="footer-home">
