@@ -72,7 +72,7 @@ var scroll = {
 window.addEventListener('scroll', function() {
 	scroll.position = window.scrollY;
 
-	if(scroll.position > 50) {
+	if(scroll.position > 40) {
 		scroll.addOnScroll();
 	} else {
 		scroll.removeOnScroll();

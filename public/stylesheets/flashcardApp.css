@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Montserrat|Righteous|Maven+Pro|Abel|Aleo|Open+Sans+Condensed:300|Oswald|Thasadith');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat|Righteous|Maven+Pro|Abel|Aleo|Open+Sans+Condensed:300|Oswald|Thasadith|Dosis|Kaushan+Script|Lobster');
 
 body, html {
 	margin: 0px;
@@ -16,7 +16,7 @@ body, html {
 }
 
 .nameOfSite {
-	margin: 0px 20px 0px 20px;
+	margin: 0px 20px 0px 5px;
 	padding: 0px;
 	margin-right: auto;
 }
@@ -27,8 +27,8 @@ body, html {
 
 .nameOfSite-h1 {
 	color: white;
-	font-size: 20px;
-	font-family: 'Montserrat', sans-serif;
+	font-size: 26px;
+	font-family: 'Kaushan Script', sans-serif;
 	font-weight: 600;
 }
 
@@ -43,7 +43,7 @@ body, html {
 }
 
 .newSets-navBar {
-	margin-right: 20px;
+	margin-right: 5px;
 }
 
 .createNewSet {
@@ -392,25 +392,6 @@ input[type="text"].newSetName-Input::placeholder {
 	/* #D6CCCC */
 }
 
-.keyline-home-0, .keyline-home-1 {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 95vw;
-	height: 1px;
-	z-index: 20;
-}
-
-.keyline-home-0 {
-	background-color: white;
-	margin-top: 5px;
-}
-
-.keyline-home-1 {
-	background-color: white;
-	margin-top: 45px;
-}
-
 .login-signUp {
 
 }
@@ -425,25 +406,24 @@ input[type="text"].newSetName-Input::placeholder {
 	/*background-color: #E00F47;*/
 	background-color: transparent;
 	color: white;
-	font-size: 12px;
+	font-size: 13px;
 	width: 70px;
 	height: 20px;
 	text-align: center;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-weight: lighter;
 }
 
 .inner-signUp {
 	background-color: transparent;
 	color: white;
-	font-size: 12px;
+	font-size: 13px;
 	width: 70px;
 	height: 20px;
 	text-align: center;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-weight: bolder;
 	border: solid white 1px;
-	padding-top: 3px;
 }
 
 .home-container {
@@ -507,13 +487,13 @@ a {
 
 .home-img-div {
 	width: 75%;
-	margin-top: -180px;
+	margin-top: -200px;
 }
 
 .home-img-text {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	text-align: center;
-	font-size: 18px;
+	font-size: 22px;
 	color: white;
 	white-space: nowrap;
 	font-weight: bold;
@@ -582,7 +562,7 @@ a {
 
 .home-logOn-explain-div-1 {
 	width: 75%;
-	height: 80px;
+	height: 50px;
 	border-radius: 2px;
 	display: block;
 	/*
@@ -596,14 +576,12 @@ a {
 }
 
 .home-logOn-explain-1 {
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-top: 5px;
 	font-size: 16px;
 	font-family: 'Thasadith', sans-serif;
 	color: white;
 	text-align: center;
-	white-space: nowrap;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 .inner-container-2 .home-img-separator {
@@ -627,9 +605,9 @@ a {
 }
 
 .home-logOn-div h3 {
-	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
-	margin-bottom: 30px;
+	font-size: 16px;
+	font-family: 'Dosis', sans-serif;
+	margin: 6px;
 	/*color: #2F2F2F;*/
 	color: white;
 }
@@ -664,7 +642,7 @@ a {
 }
 
 .Term-Definition-home {
-	
+	width: 100%;
 }
 
 .Term-home {
@@ -678,7 +656,7 @@ a {
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	background-color: transparent;
 }
 
@@ -689,7 +667,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .Term-h3-home {
 	display: block;
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	color: white;
 }
 
@@ -704,14 +682,14 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	background-color: transparent;
 }
 
 .Definition-h3-home {
 	display: block;
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	color: white;
 }
 
@@ -748,6 +726,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 /* hide back of pane during swap */
 .front-home, .back-home {
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 
 	position: absolute;
 	top: 0;
@@ -805,10 +784,10 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 #sendButton-home {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
+	font-family: 'Dosis', sans-serif;
+	font-size: 14px;
 	color: white;
-	padding: 10px;
+	padding: 8px;
 	text-align: center;
 	cursor: pointer;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
