@@ -1,7 +1,8 @@
  @import url('https://fonts.googleapis.com/css?family=Montserrat|Righteous|Maven+Pro|Abel|Aleo|Open+Sans+Condensed:300|Oswald|Thasadith');
 
-body {
+body, html {
 	margin: 0px;
+	padding: 0px;
 }
 
  .headerActivityPage {
