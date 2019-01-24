@@ -387,9 +387,8 @@ input[type="text"].newSetName-Input::placeholder {
 }
 
 .keyline-home-0, .keyline-home-1 {
-
 	position: fixed;
-	width: 95%;
+	width: 95vw;
 	height: 1px;
 	z-index: 20;
 }
