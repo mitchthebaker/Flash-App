@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width, user-scalable=1"/>
 	<title> Create New Set </title>
 	<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<script src="exCard-home.js" async> </script> 
 	<script src="events-home.js" async> </script>
-	<script src="passCheck.js" async> </script>
+	<!-- <script src="passCheck.js" async> </script> -->
 </head>
 <body>
 	<div class="home-container">
@@ -48,19 +48,21 @@
 			</div>	
 		</div>
 		<figure class="inner-container-1">
-			<img class="second-img" src="/images/IMG_0121.JPG" alt="SF Pink Flower"/>
-			<figcaption class="home-logOn-explain-div">
-				<h3 class="home-logOn-register">
-					Using the built-in study interface of FlashPass, <br> studying is made easy.
-				</h3>
+			<img class="second-img" src="/images/IMG_0121.JPG" alt="SF Pink Flower"/> 
+			<div class="home-img-div-1">
+				<figcaption class="home-logOn-explain-div">
+					<h3 class="home-logOn-register">
+						Using the built-in study interface of FlashPass, <br> studying is made easy.
+					</h3>
 				<div class="home-img-separator">
 				</div>
-			</figcaption>
-			<figcaption class="home-logOn-explain-div-1">
-				<h3 class="home-logOn-explain-1">
-					Imagine, create, practice.. <br> The potential is limitless. <br> Take learning into your own hands !
-				</h3>
-			</figcaption>
+				</figcaption>
+				<figcaption class="home-logOn-explain-div-1">
+					<h3 class="home-logOn-explain-1">
+						Imagine, create, practice.. <br> The potential is limitless. <br> Take learning into your own hands !
+					</h3>
+				</figcaption>
+			</div> 
 		</figure>
 		<div class="inner-container-2">
 			<div class="home-logOn-div">
@@ -127,7 +129,7 @@
 			</div>
 			<img class="third-img" src="/images/IMG_3138.JPG" alt="SF Pink Flower"/>
 			<figcaption class="register-bar">
-				<form class="register-form" class="validate" method="POST" action="/">
+				<form class="register-form" method="POST" action="/">
 					<input id="register-email" class="register-email" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
 					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
 					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
@@ -140,18 +142,18 @@
 		<div class="register-bar-header">
 			<p class="register-bar-header-exit"> <i class="fas fa-times"></i> </p>
 			<form class="register-form-header" class="validate" method="POST" action="/" >
-				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email"/>
-				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username"/>
-				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password"/>
+				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
+				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
 				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
 			</form>
 		</div>
 		<div class="login-bar-header">
 			<p class="login-bar-header-exit"> <i class="fas fa-times"></i> </p>
 			<form class="login-form-header" class="validate" method="POST" action="/">
-				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email"/>
-				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password"/>
-				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now"/>
+				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password" required/>
+				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now" required/>
 			</form>
 		</div>
 		<footer class="footer-home">

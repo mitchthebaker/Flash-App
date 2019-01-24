@@ -521,22 +521,33 @@ a {
 }
 
 .second-img {
-	margin-top: 5px;
 	max-width: 100%;
 	height: auto;
 	border-bottom: solid white 5px;
 	object-fit: cover;
 }
 
+.home-img-div-1 {
+	margin-top: -250px;
+	margin-bottom: 65px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
 .home-logOn-explain-div {
 	width: 75%;
 	height: 100px;
 	border-radius: 2px;
-	margin: 70px auto;
 	display: block;
+	/*
+	margin: 70px auto;
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
+	*/
 }
 
 .home-logOn-explain-div h3 {
@@ -555,23 +566,30 @@ a {
 	width: 75%;
 	height: 80px;
 	border-radius: 2px;
-	margin: 160px auto;
 	display: block;
+	/*
+	margin: 160px auto;
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
+	*/
 	border: solid white 1px;
 	background: rgba(204, 204, 204, 0.3);
 }
 
 .home-logOn-explain-1 {
 	margin-top: 8px;
+	margin-bottom: 8px;
 	font-size: 16px;
 	font-family: 'Thasadith', sans-serif;
 	color: white;
 	text-align: center;
 	white-space: nowrap;
 	font-weight: bold;
+}
+
+.inner-container-2 .home-img-separator {
+	margin-bottom: 35px;
 }
 
 .home-logOn-div {
@@ -611,7 +629,7 @@ a {
 	height: 80px;
 	border-radius: 2px;
 	margin-top: 100px;
-	margin-bottom: 5px;
+	margin-bottom: 30px;
 	display: block;
 	background: rgba(204, 204, 204, 0.3);
 }
@@ -1096,26 +1114,33 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
   font-style: italic;
 }
 
+figure {
+	margin: 0;
+	padding: 0;
+	margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
 
 /* MEDIA QUERIES */
 
 /* iPhone resolution or less */
 @media only screen and (max-device-width: 480px) {
 
-.Term-home {
-	width: 39%;
-	margin-right: 21px;
-}
+	.Term-home {
+		width: 39%;
+		margin-right: 21px;
+	}
 
-.Definition-home {
-	width: 39%;
-}
+	.Definition-home {
+		width: 39%;
+	}
 
-.register-bar-show {
-	height: 240px;
-	margin: 135px auto;
-}
-	
+	.register-bar-show {
+		height: 240px;
+		margin: 135px auto;
+	}
 }
 
 
