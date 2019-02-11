@@ -158,9 +158,11 @@ module.exports = function(passport) {
   		//Deletes the current session object
   		req.session.destroy(function(err) {
   			if(err) {
+          console.log('Error: ' + err);
   				return next(err);
   			}
   			else {
+          console.log('Logging user out..');
   				return res.redirect('/');
   			}
   		});

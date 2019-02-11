@@ -5,7 +5,8 @@
 		<title> Profile </title>
 		<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
+		<script src="events-newSet.js" async> </script>
+		<script src="newSet-menu.js" async> </script>
 		<script >
 			document.addEventListener("DOMContentLoaded", function() {
 				function addTextWithinDiv() {
@@ -19,6 +20,13 @@
 		</script>
 	</head>
 	<body>
+		<div class="dropbtn-menu">
+			<ul class="dbtn-menu-list">
+				<a href="/flashHome"> <li> Your Sets </li> </a>
+				<a href=""> <li> Settings </li> </a>
+				<a href="/logout"> <li> Logout </li> </a>
+			</ul>
+		</div>
 		<div class="container-1">
 			<header class="headerActivityPage-home">
 				<div class="header">
@@ -36,9 +44,9 @@
 							</a>
 						</div>
 						<div class="sideNavBar">
-							<a class="sideNavBar-a" href="">
-								<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
-							</a>
+							<div class="sideNavBar-a" href="">
+								<button class="dropbtn" id="newSet-menu"> <i class="fas fa-bars"></i> </button>
+							</div>
 						</div>
 					</div>
 				</div>
