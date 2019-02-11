@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=1"/>
+		<title> Sign Up </title>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	</head>
+	<body>
+		<header class="headerActivityPage-home">
+			<div class="header">
+				<div class="nameOfSite">
+					<a class="nameOfSite-a" href="/"> 
+						<h1 class="nameOfSite-h1"> FlashPass </h1>
+					</a>
+				</div>
+				<div class="newSets-navBar">
+					<div class="login-signUp">
+						<a class="login-a" href="/login">
+							<h3 class="inner-login">
+								Login
+						</h3>
+						</a>
+						<a class="signUp-a" href="/signup">
+							<h3 class="inner-signUp">
+								Sign up
+							</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="signup-flashMsg">
+			<% if(message.length > 0) { %>
+				<div class="flash-Msg"> <%= message %> </div>
+			<% } %>
+		</div>
+		<div class="register-bar-header">
+			<form class="register-form-header" class="validate" method="POST" action="/signup">
+				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
+				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
+				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
+			</form>
+		</div>
+	</body>
+</html>

@@ -21,16 +21,16 @@
 					</div>
 					<div class="newSets-navBar">
 						<div class="login-signUp">
-							<div class="login-a">
+							<a class="login-a" href="/login">
 								<h3 class="inner-login">
 									Login
 								</h3>
-							</div>
-							<div class="signUp-a">
+							</a>
+							<a class="signUp-a" href="/signup">
 								<h3 class="inner-signUp">
 									Sign up
 								</h3>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -134,28 +134,11 @@
 					<input id="register-user" class="register-user" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
 					<input id="register-pass" class="register-pass" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
 					<input id="register-submit" class="register-submit" type="submit" value="Sign Up"/>
-					<div class="register-login"> Already registered? <span id="register-login-click"> Login </span> </div>
+					<div class="register-login"> Already registered? <a id="register-login-click" href="/login"> Login </a> </div>
 					<!-- <input id="register-passConf" class="register-passConf" type="text" name="passwordConf" placeholder="Confirm password" required data-value-missing="This field is required!"/> -->
 				</form>
 			</figcaption>
 		</figure>
-		<div class="register-bar-header">
-			<p class="register-bar-header-exit"> <i class="fas fa-times"></i> </p>
-			<form class="register-form-header" class="validate" method="POST" action="/" >
-				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
-				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
-				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
-				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
-			</form>
-		</div>
-		<div class="login-bar-header">
-			<p class="login-bar-header-exit"> <i class="fas fa-times"></i> </p>
-			<form class="login-form-header" class="validate" method="POST" action="/">
-				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
-				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password" required/>
-				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now" required/>
-			</form>
-		</div>
 		<footer class="footer-home">
 		</footer>
 	</div>
@@ -173,4 +156,26 @@
 					Use repetition to your advantage <br> as it trains our metacognitive ability to ask questions that aid in our ability to reason <br> and think critically.
 				</h3>
 			</div>
-		-->
+
+
+ORIGINAL REGISTER FOR HOMEPAGE:
+<div class="register-bar-header">
+			<p class="register-bar-header-exit"> <i class="fas fa-times"></i> </p>
+			<form class="register-form-header" class="validate" method="POST" action="/" >
+				<input id="register-email-header" class="register-email-header" type="text" name="email" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="register-user-header" class="register-user-header" type="text" name="username" placeholder="Username" required minlength="3" maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?!.*\s).*$" title="Please include at least 1 number"/>
+				<input id="register-pass-header" class="register-pass-header" type="text" name="password" placeholder="Password" required data-value-missing="This field is required!"/>
+				<input id="register-submit-header" class="register-submit-header" type="submit" value="Sign Up"/>
+			</form>
+		</div>
+
+ORIGINAL SIGNUP:
+<div class="login-bar-header">
+			<p class="login-bar-header-exit"> <i class="fas fa-times"></i> </p>
+			<form class="login-form-header" class="validate" method="POST" action="/">
+				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password" required/>
+				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now" required/>
+			</form>
+		</div>
+-->

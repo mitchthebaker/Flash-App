@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=1"/>
+		<title> Login </title>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	</head>
+	<body>
+		<header class="headerActivityPage-home">
+			<div class="header">
+				<div class="nameOfSite">
+					<a class="nameOfSite-a" href="/"> 
+						<h1 class="nameOfSite-h1"> FlashPass </h1>
+					</a>
+				</div>
+				<div class="newSets-navBar">
+					<div class="login-signUp">
+						<a class="login-a" href="/login">
+							<h3 class="inner-login">
+								Login
+						</h3>
+						</a>
+						<a class="signUp-a" href="/signup">
+							<h3 class="inner-signUp">
+								Sign up
+							</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="signup-flashMsg">
+			<% if(message.length > 0) { %>
+				<div class="flash-Msg"> <%= message %> </div>
+			<% } %>
+		</div>
+		<div class="login-bar-header">
+			<form class="login-form-header" class="validate" method="POST" action="/login">
+				<input id="login-email-header" class="login-email-header" type="text" name="logemail" placeholder="Email" required data-value-missing="This field is required!" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" title="Email must include an @"/>
+				<input id="login-pass-header" class="login-pass-header" type="text" name="logpassword" placeholder="Password" required/>
+				<input id="login-submit-header" class="login-submit-header" type="submit" value="Login Now" required/>
+			</form>
+		</div>
+	</body>
+</html>

@@ -34,7 +34,7 @@ body, html {
 
 .dropbtn
 {
-	background-color: black;
+	background-color: transparent;
 	color: white;
 	padding: 16px;
 	font-size: 20px;
@@ -73,7 +73,7 @@ body, html {
 	*/
 	color: white;
 	font-size: 40px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	margin-bottom: 40px;
 }
 
@@ -95,7 +95,7 @@ input:focus, textarea:focus {
 
 input[type="text"].searchBar-Input::placeholder {
 	color: white;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-size: 16px;
 }
 
@@ -114,7 +114,7 @@ input[type="text"].searchBar-Input::placeholder {
 }
 
 .flashcardSetName {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-size: 16px;
 	color: #696969;
 }
@@ -134,12 +134,13 @@ input[type="text"].searchBar-Input::placeholder {
 	*/
 	color: white;
 	font-size: 30px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
+	margin-top: 60px;
 	margin-bottom: 50px;
 }
 
 .newSetName-inDiv {
-	border-bottom: solid #2F4F4F 2px;
+	border-bottom: solid white 2px;
 }
 
 .newSetName-Input {
@@ -151,13 +152,14 @@ input[type="text"].searchBar-Input::placeholder {
 
 input:focus, textarea:focus {
     outline: none; /** For Safari, etc **/
-    border: solid white 1px; /** For Firefox **/
-    text-align: center;
+    border: solid white 0px; /** For Firefox **/
+    text-align: left;
+    color: white;
 }
 
 input[type="text"].newSetName-Input::placeholder {
 	color: white;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-size: 15px;
 }
 
@@ -166,7 +168,8 @@ input[type="text"].newSetName-Input::placeholder {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	background-color: #F7F8F8;
+	background-color: #D6CCCC;
+	border-top: solid white 5px;
 }
 
 .flashForm {
@@ -182,7 +185,7 @@ input[type="text"].newSetName-Input::placeholder {
 	align-items: center;
 	width: 85%;
 	margin: 20px;
-	background-color: white;
+	border: solid white 1px;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
@@ -197,13 +200,15 @@ input[type="text"].newSetName-Input::placeholder {
 
 .newCard-Term {
 	border: 0;
-	border-bottom: solid #2F4F4F 2px;
-	font-family: 'Montserrat', sans-serif;
+	border-bottom: solid white 2px;
+	font-family: 'Dosis', sans-serif;
+	background-color: transparent;
+	color: white;
 }
 
 .Term-h3 {
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 .Definition {
@@ -213,13 +218,15 @@ input[type="text"].newSetName-Input::placeholder {
 
 .newCard-Definition {
 	border: 0;
-	border-bottom: solid #2F4F4F 2px;
-	font-family: 'Montserrat', sans-serif;
+	border-bottom: solid white 2px;
+	font-family: 'Dosis', sans-serif;
+	background-color: transparent;
+	color: white;
 }
 
 .Definition-h3 {
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 .hidden {
@@ -240,7 +247,7 @@ input[type="text"].newSetName-Input::placeholder {
 	background-color: white;
 	margin: 10px;
 	border: 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-size: 20px;
 	font-weight: 1000;
 	cursor: pointer;
@@ -258,7 +265,7 @@ input[type="text"].newSetName-Input::placeholder {
 }
 
 #sendButton {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	padding: 10px;
 	font-size: 12px;
 	text-align: center;
@@ -527,7 +534,7 @@ a {
 
 .home-img-div-1 {
 	margin-top: -250px;
-	margin-bottom: 65px;
+	margin-bottom: 95px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -911,15 +918,28 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	cursor: pointer;
 }
 
+.signup-flashMsg {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-align: center;
+	background-color: transparent;
+	margin-top: 100px;
+}
+
+.flash-Msg {
+	color: white;
+	font-size: 16px;
+	font-family: 'Thasadith', sans-serif;
+	font-weight: bolder;
+}
+
 .register-bar-header {
 	background-color: #D6CCCC;
 	width: 100%;
-	height: 0px;
-	visibility: hidden;
-	opacity: 0;
-	transition: height 300ms ease-in;
-	position: fixed;
-	z-index: 21;
+	height: 100vh;
 }
 
 .register-bar-header-show {
@@ -1018,12 +1038,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .login-bar-header {
 	background-color: #D6CCCC;
 	width: 100%;
-	height: 0px;
-	visibility: hidden;
-	opacity: 0;
-	transition: height 300ms ease-in;
-	position: fixed;
-	z-index: 21;
+	height: 100vh;
 }
 
 .login-bar-header-show {

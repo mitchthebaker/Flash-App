@@ -14,6 +14,45 @@ document.querySelector('.home-logOn-div-bottom').addEventListener('click', funct
 	}
 });
 
+
+
+//.addEventListener() event 
+document.getElementById('register-login-click').addEventListener('click', function() {
+	if(!hasClass(document.querySelector('.login-bar-header', 'login-bar-header-show'))) {
+		console.log('opening login bar from the header <a> tag');
+		document.querySelector('.login-bar-header').classList.add('login-bar-header-show');
+	} else {
+		console.log('closing login bar from the header <a> tag');
+		document.querySelector('.login-bar-header').classList.remove('login-bar-header-show');
+	}
+});
+
+//Object with imbedded variables for the scroll event below
+var scroll = {
+	position: window.scrollY,
+	header: document.querySelector('.headerActivityPage-home'),
+	addOnScroll: function() {
+		scroll.header.classList.add('headerActivityPage-home-scroll');
+	},
+	removeOnScroll: function() {
+		scroll.header.classList.remove('headerActivityPage-home-scroll');
+	}
+};
+
+//Changes background color of header when scroll.position > 50
+window.addEventListener('scroll', function() {
+	scroll.position = window.scrollY;
+
+	if(scroll.position > 40) {
+		scroll.addOnScroll();
+	} else {
+		scroll.removeOnScroll();
+	}
+	//console.log('Current scroll position for header: ' + scroll.position);
+});
+
+/*
+
 //.addEventListener() event for the 'Sign Up' button in header
 document.querySelector('.signUp-a').addEventListener('click', function() {
 	if(!hasClass(document.querySelector('.register-bar-header', 'register-bar-header-show'))) {
@@ -40,42 +79,9 @@ document.querySelector('.login-a').addEventListener('click', function() {
 	}
 });
 
-//.addEventListener() event 
-document.getElementById('register-login-click').addEventListener('click', function() {
-	if(!hasClass(document.querySelector('.login-bar-header', 'login-bar-header-show'))) {
-		console.log('opening login bar from the header <a> tag');
-		document.querySelector('.login-bar-header').classList.add('login-bar-header-show');
-	} else {
-		console.log('closing login bar from the header <a> tag');
-		document.querySelector('.login-bar-header').classList.remove('login-bar-header-show');
-	}
-});
-
 //Removes the .login-bar-header-show class from .login-bar-header
 document.querySelector('.login-bar-header-exit').addEventListener('click', function() {
 	document.querySelector('.login-bar-header').classList.remove('login-bar-header-show');
 });
 
-//Object with imbedded variables for the scroll event below
-var scroll = {
-	position: window.scrollY,
-	header: document.querySelector('.headerActivityPage-home'),
-	addOnScroll: function() {
-		scroll.header.classList.add('headerActivityPage-home-scroll');
-	},
-	removeOnScroll: function() {
-		scroll.header.classList.remove('headerActivityPage-home-scroll');
-	}
-};
-
-//Changes background color of header when scroll.position > 50
-window.addEventListener('scroll', function() {
-	scroll.position = window.scrollY;
-
-	if(scroll.position > 40) {
-		scroll.addOnScroll();
-	} else {
-		scroll.removeOnScroll();
-	}
-	//console.log('Current scroll position for header: ' + scroll.position);
-});
+*/
