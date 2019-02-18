@@ -50,6 +50,10 @@ app.use(session({
 app.use(flash());
 */
 
+//Create path to public file
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/scripts')));
+
 //Configuring Passport
 //const passport = require('./config/passport')(passport);
 const passport = require('passport');
@@ -68,10 +72,6 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(methodOverride());
-
-//Create path to public file
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/scripts')));
 
 //Initialize Passport
 var initPassport = require('./config/init');

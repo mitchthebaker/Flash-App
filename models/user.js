@@ -7,18 +7,18 @@ var UserSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true,
-    required: true,
+    required: false,
     trim: true
   },
   username: {
     type: String,
     unique: true,
-    required: true,
+    required: false,
     trim: true
   },
   password: {
     type: String,
-    requried: true
+    required: false
   }
   /*
   passwordConf: {
@@ -26,7 +26,7 @@ var UserSchema = new mongoose.Schema({
     required: true
   }
   */
-});
+}, {strict: false});
 
 //Authenticate the current input against users in the database
 UserSchema.statics.authenticate = function(email, password, callback) {

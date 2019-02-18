@@ -154,9 +154,98 @@ input[type="text"].searchBar-Input::placeholder {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #F7F8F8;
+	background-color: #D6CCCC;
 	width: 100%;
+	border-top: solid white 5px;
 }
+
+.userSet {
+	width: 100%;
+	border: 1px solid white;
+	text-align: center;
+	margin: 10px;
+}
+
+.userSet h3 {
+	color: white;
+	font-family: 'Dosis', 'Montserrat';
+	margin: 5px;
+}
+
+.dataMessage-1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.dataMessage-1 h3 {
+	margin: 10px;
+	padding: 20px;
+	width: 85%;
+	text-align: center;
+	border: solid white 1px;
+	color: white;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	font-family: 'Dosis', 'Montserrat';
+	font-size: 18px;
+}
+
+.dataMessage-2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.dataMessage-show {
+	visibility: visible;
+	opacity: 1;
+}
+
+.home-newMsg {
+	margin: 15px;
+	width: 85%;
+	text-align: center;
+	border: solid white 1px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.newMsg-h3 {
+	font-family: 'Dosis';
+	font-size: 16px;
+	color: white;
+	margin: 5px;
+}
+
+.home-newSet-direct {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin: 15px;
+	width: 85%;
+	text-align: center;
+	border: solid white 1px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.newSet-button-direct {
+	border: 2px solid white;
+	margin: 10px;
+	width: 40%;
+	
+}
+
+.newSet-button-direct h3 {
+	padding: 5px;
+	font-family: 'Dosis';
+	background-color: #E00F47;	
+	margin: 0;
+}
+
 .flashcardSet-1 {
 	background-color: white;
 	width: 80%;

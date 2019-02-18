@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 var User = require('../models/user');
+var newSet = require('../models/set');  
 
 module.exports = function(passport) {
 
@@ -14,7 +15,6 @@ module.exports = function(passport) {
         loginUser = function() {
             console.log('here');
             User.findOne({ 'email' : email }, function(err, user) {
-                console.log(user);
                 // In case of any error, return using the done method
                 if (err) {
                     console.log('Error in login: ' + err);

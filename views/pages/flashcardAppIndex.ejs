@@ -7,22 +7,65 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 		<script src="events-newSet.js" async> </script>
 		<script src="newSet-menu.js" async> </script>
-		<script >
-			document.addEventListener("DOMContentLoaded", function() {
-				function addTextWithinDiv() {
-					var flashcardSetName = document.getElementById("flashcardSetName");
-					flashcardSetName.textContent = 'First Set';
-					document.getElementById("flashcardSet-1").appendChild(flashcardSetName);
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+
+				function hasClass(element, cls) {
+					return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
 				}
 
-				document.getElementById("flashcardSet-1").addEventListener("click", addTextWithinDiv, false);
-			})
+				var query = {
+					dataMessage: document.querySelector('.dataMessage-div'),
+					dataMessage1: document.querySelector('.dataMessage-1'),
+					dataMessage2: document.querySelector('.dataMessage-2')
+				};
+
+				var setData = {
+					data: <%- JSON.stringify(data) %>,
+					data_forEach: function() {
+						let tempArray = [];
+						JSON.parse(this.data).forEach(function(e) {
+							tempArray.push(e.setName);
+						});
+						return tempArray;
+					},
+					data_values: function() {
+						return Object.values(JSON.parse(this.data));
+					},
+					dataLength: <%- length %>
+				};
+
+				console.log(setData.data);
+				console.log(setData.data_forEach()[0]);
+				//console.log(setData.data_values()[0]);	
+				console.log(setData.dataLength);
+
+				if(setData.dataLength !== 0) {
+					//query.dataMessage1.style.visibility = 'visible';
+					//query.dataMessage2.style.visibility = 'hidden';
+					query.dataMessage1.classList.add('dataMessage-show');
+					query.dataMessage2.classList.remove('dataMessage-show');
+
+					for(let i = 0; i < setData.dataLength; i++) {
+						let setH3 = document.createElement('h3');
+						setH3.setAttribute('class', 'setH3');
+						setH3.innerHTML = setData.data_forEach()[i];
+						document.querySelector('.dataMessage-1').append(setH3);
+					}
+				}
+				else {
+					//query.dataMessage1.style.visibility = 'hidden';
+					//query.dataMessage2.style.visibility = 'visible';
+					query.dataMessage1.classList.remove('dataMessage-show');
+					query.dataMessage2.classList.add('dataMessage-show');
+				}
+			});
 		</script>
 	</head>
 	<body>
 		<div class="dropbtn-menu">
 			<ul class="dbtn-menu-list">
-				<a href="/flashHome"> <li> Your Sets </li> </a>
+				<a href="/profile"> <li> Your Sets </li> </a>
 				<a href=""> <li> Settings </li> </a>
 				<a href="/logout"> <li> Logout </li> </a>
 			</ul>
@@ -31,7 +74,7 @@
 			<header class="headerActivityPage-home">
 				<div class="header">
 					<div class="nameOfSite">
-						<a class="nameOfSite-a" href="/flashHome"> 
+						<a class="nameOfSite-a" href="/profile"> 
 							<h1 class="nameOfSite-h1"> FlashPass </h1>
 						</a>
 					</div>
@@ -61,15 +104,53 @@
 			</div>			
 		</div>
 		<div class="container-2">
-			<div class="flashcardSet-1" id="flashcardSet-1">
-				<h2 class="flashcardSetName" id="flashcardSetName">
-				</h2>
-				<h3 class="flashcardSetNumTerm">
-				</h3>
-				<div class="userID">
-					<img class="userIDImage" src=""/>
+			<div>
+				<%= user._id %>
+			</div>
+			<div class="dataMessage-div">
+				<div class="dataMessage-1"> </div>
+				<div class="dataMessage-2">
+					<div class="home-newMsg">
+						<h3 class="newMsg-h3">
+							Once you begin creating more sets, they will all be displayed on this page for you to see. <br><br> Currently, your list of sets is empty!
+						</h3>
+					</div>
+					<div class="home-newSet-direct">
+						<h3 class="newMsg-h3">
+							Click the button below to get started:
+						</h3>
+						<a href="/flashCreate" class="newSet-button-direct"> 
+							<h3> Create a New Set </h3> 
+						</a>
+					</div>
 				</div>
-			</div>		
+			</div>
 		</div>			
 	</body>
 </html>
+
+<!--
+<div class="flashcardSet-1" id="flashcardSet-1">
+	<h2 class="flashcardSetName" id="flashcardSetName">
+	</h2>
+	<h3 class="flashcardSetNumTerm">
+	</h3>
+	<div class="userID">
+		<img class="userIDImage" src=""/>
+	</div>
+</div>	
+
+<script >
+			document.addEventListener("DOMContentLoaded", function() {
+				function addTextWithinDiv() {
+					var flashcardSetName = document.getElementById("flashcardSetName");
+					flashcardSetName.textContent = 'First Set';
+					document.getElementById("flashcardSet-1").appendChild(flashcardSetName);
+				}
+
+				document.getElementById("flashcardSet-1").addEventListener("click", addTextWithinDiv, false);
+			})
+		</script>
+
+-->
+

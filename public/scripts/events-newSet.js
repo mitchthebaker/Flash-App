@@ -21,3 +21,17 @@ window.addEventListener('scroll', function() {
 	}
 	//console.log('Current scroll position for header: ' + scroll.position);
 });
+
+var setDirect = {
+	dataMsgDiv: document.querySelector('.dataMessage-1'),
+	setH3_list: document.querySelectorAll('.setH3')
+};
+
+console.log(setDirect.setH3_list);
+console.log(setDirect.data);
+
+/*
+setDirect.setH3_list.forEach(function(e) {
+	e.onclick = location.assign('/')
+});
+*/

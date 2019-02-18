@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 var User = require('../models/user');
 var newSet = require('../models/set');
+var userSetQuery = require('../db/userSetQuery');
+const mongoose = require('mongoose');
+var db = mongoose.connection;
 
 module.exports = function(passport) {
   
@@ -77,9 +80,39 @@ module.exports = function(passport) {
    
 
   router.get('/profile', isLoggedIn, (req, res) => {
-    res.render('pages/flashcardAppIndex', {
-      user: req.user //Gets the user out of session and passes the current template 
+    //userSetQuery.allSets(req.user._id);
+    userSetQuery.allSets(function(err, data) {
+      if(err) {
+        return next(err);
+      }
+      console.log('SET DATA: ' + data);
+      console.log(JSON.parse(data));
+      console.log(JSON.parse(data)[0]);
+      console.log(JSON.parse(data).length);
+
+      //let dataKeys = Object.keys(JSON.parse(data)[0]);
+      //let dataValues = Object.values(JSON.parse(data)[0]);
+      let dataLength = JSON.parse(data).length;  
+      //console.log(dataValues);
+
+      res.render('pages/flashcardAppIndex', {
+        user: req.user, //Gets the user out of session and passes the current template 
+        data: data,
+        length: dataLength
+      });
+    }, req.user._id);
+
+    /* Previous attempts
+    User.findOne({ 'email' : req.user.email }, function(err, user) {
+      user.updateOne(
+        { sets: { numSets: 0 } },  
+        {multi: true}, function(err, numberAffected) {
+      });
+      
+      //var nKeys = Object.keys(user).length;
+      //console.log('total number: ' + nKeys);
     });
+    */
   });
 
   /*
@@ -105,7 +138,11 @@ module.exports = function(passport) {
   */
 
   //GET route for flashHome
-  router.get('/flashHome', (req, res) => res.render('pages/flashcardAppIndex'));
+  router.get('/flashHome', (req, res) => {
+
+    res.render('pages/flashcardAppIndex');
+
+  });
 
   //GET route for flashCreate
   router.get('/flashCreate', (req, res) => res.render('pages/flashcardAppCreateNewSet'));
@@ -113,28 +150,29 @@ module.exports = function(passport) {
   //POST route for flashCreate, potential data is for new sets 
   //created by the user.
   router.post('/flashCreate', async function(req, res) {
-      let set = new newSet(req.body);
-      let setLength = Object.keys(req.body).length;  
-      let setKeys = Object.keys(req.body);
-      let setValues = Object.values(req.body);
+    console.log('USER: ' + req.user._id);
+    req.body.userID = req.user._id;
+    let set = new newSet(req.body);
+    let setLength = Object.keys(req.body).length;  
+    let setKeys = Object.keys(req.body);
+    let setValues = Object.values(req.body);
     
-      set.save((err) => {
-        if(!err) {  
-          res.render('pages/flashcardAppCreateNewSet-success', {
-            data: set,
-            keys: setKeys,
-            values: setValues,
-            length: setLength   
-          });
-        }
-        else {
-          res.send('Something went wrong here..');
-          next();
-        }
-        //res.json(set);
-        //res.render('pages/flashcardAppCreateNewSet-success');
-      });
-      
+    set.save((err) => {
+      if(!err) {  
+        res.render('pages/flashcardAppCreateNewSet-success', {
+          data: set,
+          keys: setKeys,
+          values: setValues,
+          length: setLength   
+        });
+      }
+      else {
+        res.send('Something went wrong here..');
+        console.log(err);
+      }
+      //res.json(set);
+      //res.render('pages/flashcardAppCreateNewSet-success');
+    });
   });
 
   //GET route for flashCreate-success
