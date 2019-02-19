@@ -629,6 +629,7 @@ input[type="text"].newSetName-Input::placeholder {
 	align-items: center;
 	width: 100%;
 	margin: 0px;
+	position: relative;
 }
 
 a {
@@ -1012,7 +1013,10 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	border-radius: 2px;
 	width: 75%;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-	margin-top: -201px;
+	margin-top: -145px;
+	position: absolute;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
 }
 
 .register-email {
