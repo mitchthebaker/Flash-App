@@ -646,7 +646,7 @@ a {
 .home-img-div {
 	width: 75%;
 	margin-top: -230px;
-	margin-bottom: 28px;
+	margin-bottom: 27px;
 }
 
 .home-img-text {
@@ -811,12 +811,14 @@ a {
 }
 
 .newCard-Term-home {
+	color: white;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
+	border-radius: 0;
 	font-family: 'Dosis', sans-serif;
 	background-color: transparent;
 }
@@ -840,12 +842,14 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .newCard-Definition-home {
+	color: white;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
+	border-radius: 0;
 	font-family: 'Dosis', sans-serif;
 	background-color: transparent;
 }
@@ -987,14 +991,12 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .register-bar {
 	width: 75%;
 	height: 0px;
-	margin-top: 30px;
-	border-radius: 2px;
+	margin-top: 20px;
 	display: block;
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
-	border: solid white 1px;
-	background: rgba(204, 204, 204, 0.3);
+	/*background: rgba(204, 204, 204, 0.3);*/
 	/*
 	visibility: hidden;
 	opacity: 0;
@@ -1014,6 +1016,8 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
+	border: 1px solid white;
+	border-radius: 2px;
 }
 
 .register-email {
@@ -1022,9 +1026,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	appearance: none;
 	width: 85%;
 	height: 20px;
-	margin: 20px 10px 5px 10px;
+	margin: 10px 10px 5px 10px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1037,7 +1041,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	height: 20px;
 	margin: 5px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1047,7 +1051,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	font-size: 14px;
 	font-family: 'Thasadith', sans-serif;
 	font-weight: normal;
-	padding: 5px 0px 5px 0px;
+	/*padding: 5px 0px 5px 0px;*/
 	text-align: center;
 }
 
@@ -1063,7 +1067,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	width: 86%;
 	height: 25px;
 	margin: 5px;
-	border: solid white 2px;
+	border: solid white 1px;
 	cursor: pointer;
 }
 
@@ -1076,7 +1080,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	width: 85%;
 	height: 25px;
 	margin: 5px;
-	border: solid white 2px;
+	border: solid white 1px;
 	text-align: center;
 }
 
@@ -1149,7 +1153,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	height: 40px;
 	margin: 150px 10px 5px 10px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1162,7 +1166,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	height: 40px;
 	margin: 5px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1172,7 +1176,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	font-size: 14px;
 	font-family: 'Thasadith', sans-serif;
 	font-weight: normal;
-	padding: 5px 0px 5px 0px;
+	/*padding: 5px 0px 5px 0px;*/
 	text-align: center;
 }
 
@@ -1188,7 +1192,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	width: 66%;
 	height: 45px;
 	margin: 5px;
-	border: solid white 2px;
+	border: solid white 1px;
 	cursor: pointer;
 }
 
@@ -1257,7 +1261,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	height: 40px;
 	margin: 150px 10px 5px 10px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1270,7 +1274,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	height: 40px;
 	margin: 5px;
 	background-color: transparent;
-	border: solid white 2px;
+	border: solid white 1px;
 	color: white;
 	text-align: center;
 }
@@ -1280,7 +1284,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	font-size: 14px;
 	font-family: 'Thasadith', sans-serif;
 	font-weight: normal;
-	padding: 5px 0px 5px 0px;
+	/*padding: 5px 0px 5px 0px;*/
 }
 
 .login-submit-header {
@@ -1295,7 +1299,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	width: 66%;
 	height: 45px;
 	margin: 5px;
-	border: solid white 2px;
+	border: solid white 1px;
 	cursor: pointer;
 }
 
