@@ -1013,10 +1013,11 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	border-radius: 2px;
 	width: 75%;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-	margin-top: -145px;
+	margin-top: -110px;
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
 }
 
 .register-email {
@@ -1066,12 +1067,13 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	font-size: 13px;
 	font-weight: bolder;
 	font-family: 'Thasadith', sans-serif;
-	width: 90%;
+	width: 89%;
 	height: 30px;
 	margin: 5px;
 	border: solid white 1px;
 	cursor: pointer;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	border-radius: 2px;
 }
 
 .register-login {
@@ -1081,12 +1083,13 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	font-size: 13px;
 	font-weight: bold;
 	font-family: 'Thasadith', sans-serif;
-	width: 90%;
+	width: 89%;
 	height: 25px;
 	margin: 5px;
 	border: solid white 1px;
 	text-align: center;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	border-radius: 2px;
 }
 
 .register-login h3 {
