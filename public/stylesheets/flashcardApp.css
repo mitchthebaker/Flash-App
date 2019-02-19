@@ -646,7 +646,7 @@ a {
 .home-img-div {
 	width: 75%;
 	margin-top: -230px;
-	margin-bottom: 30px;
+	margin-bottom: 28px;
 }
 
 .home-img-text {
@@ -811,6 +811,9 @@ a {
 }
 
 .newCard-Term-home {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
@@ -837,6 +840,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .newCard-Definition-home {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	display: block;
 	border: 0;
 	border-bottom: solid white 2px;
@@ -877,7 +883,6 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .flipper-home {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
@@ -885,7 +890,6 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .front-home, .back-home {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1013,6 +1017,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-email {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 85%;
 	height: 20px;
 	margin: 20px 10px 5px 10px;
@@ -1023,6 +1030,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-user, .register-pass, .register-passConf {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 85%;
 	height: 20px;
 	margin: 5px;
@@ -1042,6 +1052,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-submit {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	background-color: red;
 	color: white;
 	font-size: 13px;
@@ -1129,6 +1142,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-email-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 65%;
 	height: 40px;
 	margin: 150px 10px 5px 10px;
@@ -1139,6 +1155,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-user-header, .register-pass-header, .register-passConf-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 65%;
 	height: 40px;
 	margin: 5px;
@@ -1158,6 +1177,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .register-submit-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	background-color: red;
 	color: white;
 	font-size: 14px;
@@ -1228,6 +1250,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .login-email-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 65%;
 	height: 40px;
 	margin: 150px 10px 5px 10px;
@@ -1238,6 +1263,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .login-pass-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	width: 65%;
 	height: 40px;
 	margin: 5px;
@@ -1256,6 +1284,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 }
 
 .login-submit-header {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	background-color: red;
 	color: white;
 	font-size: 14px;
