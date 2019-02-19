@@ -9,20 +9,27 @@
 		<script src="newSet-menu.js" async> </script>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
-
+				//hasClass() function checking whether a certain block of text exists within an element's class name 
 				function hasClass(element, cls) {
 					return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
 				}
 
+				//'query' object encapsulating the DOM elements being selected
 				var query = {
 					dataMessage: document.querySelector('.dataMessage-div'),
 					dataMessage1: document.querySelector('.dataMessage-1'),
 					dataMessage2: document.querySelector('.dataMessage-2')
 				};
 
+				//'setData' object encapsulating data pulled from the server/database
 				var setData = {
 					data: <%- JSON.stringify(data) %>,
-					data_forEach: function() {
+					name_forEach: function() {
+						/* The purpose of this function is to get the '.setName' of the
+						 * user's sets. To iterate through the names of each set, 
+						 * we must use setData.data_forEach()[1,2,3,etc.] at the end 
+						 * in brackets ([])
+						 */
 						let tempArray = [];
 						JSON.parse(this.data).forEach(function(e) {
 							tempArray.push(e.setName);
@@ -36,29 +43,60 @@
 				};
 
 				console.log(setData.data);
-				console.log(setData.data_forEach()[0]);
-				//console.log(setData.data_values()[0]);	
+				console.log(setData.name_forEach()[0]);	
+				console.log(setData.name_forEach()[1]);	
 				console.log(setData.dataLength);
 
+				//If a user doesn't have any sets, the dataMessage2 element will be shown
 				if(setData.dataLength !== 0) {
-					//query.dataMessage1.style.visibility = 'visible';
-					//query.dataMessage2.style.visibility = 'hidden';
+					//adding/removing classes for dataMessage1/dataMessage2
 					query.dataMessage1.classList.add('dataMessage-show');
 					query.dataMessage2.classList.remove('dataMessage-show');
 
+					//Loop appending the user's sets within an h3 tag to be viewed in the browser
 					for(let i = 0; i < setData.dataLength; i++) {
 						let setH3 = document.createElement('h3');
 						setH3.setAttribute('class', 'setH3');
-						setH3.innerHTML = setData.data_forEach()[i];
+						setH3.innerHTML = setData.name_forEach()[i];
 						document.querySelector('.dataMessage-1').append(setH3);
 					}
 				}
+				//dataMessage1 element will be displayed otherwise, which displays to the user all of their current sets
 				else {
-					//query.dataMessage1.style.visibility = 'hidden';
-					//query.dataMessage2.style.visibility = 'visible';
 					query.dataMessage1.classList.remove('dataMessage-show');
 					query.dataMessage2.classList.add('dataMessage-show');
 				}
+
+				/* Script that will help create route parameters containing
+				 * URL encoded information which will be used on the next
+				 * page load when a user clicks on one of their sets
+				 *
+				 */ 
+				var setDirect = {
+					dataMsgDiv: document.querySelector('.dataMessage-1'),
+					setH3_list: document.querySelectorAll('.setH3')
+				};
+
+				console.log(setDirect.setH3_list);
+				console.log(setData.name_forEach());
+				
+				setDirect.setH3_list.forEach(function(e) {
+					var regExpConv = function(str) {
+						return str.replace(/\s+|[,\/]/g, '-');
+					}
+
+					console.log(regExpConv(e.innerText));
+					/* Testing for the regExp string above 
+					 *	
+					 *  for(let i = 0; i < setData.name_forEach().length; i++) {
+					 *		console.log(regExpConv(setData.name_forEach()[i]));
+					 *	}
+					 */
+
+					e.addEventListener('click', function() {
+						location.assign('/sets/' + regExpConv(e.innerText));
+					});				
+				});			
 			});
 		</script>
 	</head>
@@ -104,9 +142,6 @@
 			</div>			
 		</div>
 		<div class="container-2">
-			<div>
-				<%= user._id %>
-			</div>
 			<div class="dataMessage-div">
 				<div class="dataMessage-1"> </div>
 				<div class="dataMessage-2">

@@ -1,8 +1,14 @@
+//Requiring Express hardware in addition to User/newSet Schemas
 const express = require('express');
 const router = express.Router();
 var User = require('../models/user');
 var newSet = require('../models/set');
+
+//Require variables for various .js files used throughout router.js 
 var userSetQuery = require('../db/userSetQuery');
+var rgExp = require('../db/rgExp');
+
+//Router variables for mongoose, MongoDB, and other various database lingo
 const mongoose = require('mongoose');
 var db = mongoose.connection;
 
@@ -178,6 +184,32 @@ module.exports = function(passport) {
   //GET route for flashCreate-success
   router.get('/flashCreate-success', function(req, res) {
       res.render('pages/flashcardAppCreateNewSet-success');
+  });
+
+  router.get('/sets/:setId', function(req, res) {
+    console.log(req.params.setId);
+    console.log(req.user._id);
+    rgExp.rgExpConv(function(err, data) {
+      if(err) {
+        console.log('Current error in route /sets/' + req.params.setId + ' of: ' + err);
+        return next(err);
+      }
+
+      let setLength = Object.keys(data).length;  
+      let setKeys = Object.keys(data);
+      let setValues = Object.values(data);
+
+      res.render('pages/flashcardAppCreateNewSet-success', {
+        data: data,
+        keys: setKeys,
+        values: setValues,
+        length: setLength   
+      });
+    }, req.user._id, req.params.setId);
+    /*
+    let search_setId = rgExp.rgExpConv(req.params.setId);
+    console.log(search_setId);
+    */
   });
 
   /* New /logout route
