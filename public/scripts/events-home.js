@@ -3,30 +3,6 @@ function hasClass(element, cls) {
 	return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
 }
 
-//.addEventListener() event for the 'Sign Up' button within the body of the page
-document.querySelector('.home-logOn-div-bottom').addEventListener('click', function() {
-	if(!(hasClass(document.querySelector('.register-bar'), 'register-bar-show'))) {
-		console.log('opening register bar');
-		document.querySelector('.register-bar').classList.add('register-bar-show');
-	} else {
-		console.log('closing register bar');
-		document.querySelector('.register-bar').classList.remove('register-bar-show');
-	}
-});
-
-
-
-//.addEventListener() event 
-document.getElementById('register-login-click').addEventListener('click', function() {
-	if(!hasClass(document.querySelector('.login-bar-header', 'login-bar-header-show'))) {
-		console.log('opening login bar from the header <a> tag');
-		document.querySelector('.login-bar-header').classList.add('login-bar-header-show');
-	} else {
-		console.log('closing login bar from the header <a> tag');
-		document.querySelector('.login-bar-header').classList.remove('login-bar-header-show');
-	}
-});
-
 //Object with imbedded variables for the scroll event below
 var scroll = {
 	position: window.scrollY,
@@ -52,6 +28,30 @@ window.addEventListener('scroll', function() {
 });
 
 /*
+
+//.addEventListener() event for the 'Sign Up' button within the body of the page
+document.querySelector('.home-logOn-div-bottom').addEventListener('click', function() {
+	if(!(hasClass(document.querySelector('.register-bar'), 'register-bar-show'))) {
+		console.log('opening register bar');
+		document.querySelector('.register-bar').classList.add('register-bar-show');
+	} else {
+		console.log('closing register bar');
+		document.querySelector('.register-bar').classList.remove('register-bar-show');
+	}
+});
+
+
+
+//.addEventListener() event 
+document.getElementById('register-login-click').addEventListener('click', function() {
+	if(!hasClass(document.querySelector('.login-bar-header', 'login-bar-header-show'))) {
+		console.log('opening login bar from the header <a> tag');
+		document.querySelector('.login-bar-header').classList.add('login-bar-header-show');
+	} else {
+		console.log('closing login bar from the header <a> tag');
+		document.querySelector('.login-bar-header').classList.remove('login-bar-header-show');
+	}
+});
 
 //.addEventListener() event for the 'Sign Up' button in header
 document.querySelector('.signUp-a').addEventListener('click', function() {

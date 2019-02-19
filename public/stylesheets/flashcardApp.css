@@ -537,7 +537,7 @@ input[type="text"].newSetName-Input::placeholder {
 	height: 50px;
 	z-index: 15;
 	background-color: none;
-	transition: background-color 300ms ease-in;
+	transition: background-color 500ms ease-in;
 }
 
 .headerActivityPage-home-scroll {
@@ -645,7 +645,8 @@ a {
 
 .home-img-div {
 	width: 75%;
-	margin-top: -200px;
+	margin-top: -230px;
+	margin-bottom: 30px;
 }
 
 .home-img-text {
@@ -684,12 +685,11 @@ a {
 }
 
 .home-img-div-1 {
-	margin-top: -250px;
-	margin-bottom: 95px;
+	margin-top: -210px;
+	margin-bottom: 55px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	flex-wrap: nowrap;
 	width: 100%;
 }
 
@@ -716,6 +716,7 @@ a {
 	color: white;
 	text-align: center;
 	white-space: nowrap;
+	margin: 30px;
 }
 
 .home-logOn-explain-div-1 {
@@ -743,7 +744,7 @@ a {
 }
 
 .inner-container-2 .home-img-separator {
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 }
 
 .home-logOn-div {
@@ -783,7 +784,6 @@ a {
 	height: 80px;
 	border-radius: 2px;
 	margin-top: 100px;
-	margin-bottom: 30px;
 	display: block;
 	background: rgba(204, 204, 204, 0.3);
 }
@@ -969,8 +969,11 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	/*background: rgba(204, 204, 204, 0.3);*/
 }
 
-.home-logOn-div-bottom h3 {
-	font-size: 20px;
+.logOn-register-msg {
+	color: white;
+	text-align: center;
+	font-family: 'Thasadith', 'Montserrat';
+	font-size: 18px;
 	font-weight: bolder;
 	margin: 0;
 	margin-top: 6px;
@@ -980,17 +983,19 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 .register-bar {
 	width: 75%;
 	height: 0px;
+	margin-top: 30px;
 	border-radius: 2px;
-	margin: 200px auto;
 	display: block;
 	position: absolute;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 	border: solid white 1px;
 	background: rgba(204, 204, 204, 0.3);
+	/*
 	visibility: hidden;
 	opacity: 0;
 	transition: height 600ms ease;
+	*/
 }
 
 .register-bar-show {
