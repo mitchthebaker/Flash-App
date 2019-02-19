@@ -646,7 +646,7 @@ a {
 .home-img-div {
 	width: 75%;
 	margin-top: -230px;
-	margin-bottom: 27px;
+	margin-bottom: 26px;
 }
 
 .home-img-text {
@@ -990,24 +990,16 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 
 .register-bar {
 	width: 75%;
-	height: 0px;
 	margin-top: 20px;
 	display: block;
 	position: absolute;
-	left: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	/*background: rgba(204, 204, 204, 0.3);*/
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	/*
+	background: rgba(204, 204, 204, 0.3);
 	visibility: hidden;
 	opacity: 0;
 	transition: height 600ms ease;
 	*/
-}
-
-.register-bar-show {
-	opacity: 1;
-	visibility: visible;
-	height: 360px;
 }
 
 .register-form {
@@ -1031,6 +1023,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	border: solid white 1px;
 	color: white;
 	text-align: center;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .register-user, .register-pass, .register-passConf {
@@ -1044,6 +1037,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	border: solid white 1px;
 	color: white;
 	text-align: center;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .register-form input[type="text"]::placeholder {
@@ -1063,29 +1057,43 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	color: white;
 	font-size: 13px;
 	font-weight: bolder;
-	font-family: 'Montserrat', sans-serif;
-	width: 86%;
+	font-family: 'Thasadith', sans-serif;
+	width: 85%;
 	height: 25px;
 	margin: 5px;
 	border: solid white 1px;
 	cursor: pointer;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .register-login {
+	display: inline-block;
 	background-color: transparent;
 	color: white;
 	font-size: 14px;
-	font-weight: bolder;
+	font-weight: bold;
 	font-family: 'Thasadith', sans-serif;
 	width: 85%;
 	height: 25px;
 	margin: 5px;
 	border: solid white 1px;
 	text-align: center;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.register-login h3 {
+	display: inline-block;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'Thasadith', sans-serif;
+	margin: 0;
+	margin-top: 3px;
 }
 
 #register-login-click {
-	font-weight: bolder;
+	display: inline-block;
+	font-weight: bold;
 	color: white;
 	text-decoration: underline;
 	cursor: pointer;
