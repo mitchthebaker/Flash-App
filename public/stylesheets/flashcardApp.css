@@ -1010,6 +1010,9 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	align-items: center;
 	border: 1px solid white;
 	border-radius: 2px;
+	width: 75%;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	margin-top: -201px;
 }
 
 .register-email {
