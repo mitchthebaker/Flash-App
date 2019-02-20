@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title> Success Page With Data </title>
+		<title> User Sets </title>
 		<link type="text/css" rel="stylesheet" href="/stylesheets/flashcardApp.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-		<script type="module" src="sampleData.js" async> </script>
+		<script src="events-newSet.js" async> </script>
+		<script src="newSet-menu.js" async> </script>
 		<script> 
 			document.addEventListener('DOMContentLoaded', () => {
 				//Sample data that I am using to test the flash card with
@@ -33,10 +34,10 @@
 					strData: <%- JSON.stringify(data) %>,
 					arrayCount: 0,
 					key_data: function() {
-						return Object.keys(this.strData).slice(2, Object.keys(this.strData).length - 1);
+						return Object.keys(this.strData).slice(2, Object.keys(this.strData).length - 2);
 					},
 					value_data: function() {
-						return Object.values(this.strData).slice(2, Object.values(this.strData).length - 1);
+						return Object.values(this.strData).slice(2, Object.values(this.strData).length - 2);
 					},
 					keyValue_array: []
 				};
@@ -93,11 +94,6 @@
 						}
 						
 					} else if(target.id === 'nextButton') {
-						/* Take not of line 83 and the second test statement within the if statement
-						console.log(arrayCount);
-						console.log(keyValue_array[key_data.length -1][1]);
-						console.log(backCard.textContent);
-						*/
 						if(flipData.arrayCount == flipData.keyValue_array.length - 1) {
 							flipData.arrayCount == flipData.keyValue_array.length - 1;
 							console.log(flipData.arrayCount);
@@ -113,42 +109,39 @@
 				}, false);
 			});
 		</script>
-		<!-- <script type="module" src="ajaxDoc.js" async> </script> -->
 	</head>
 	<body>
-		<header class="headerActivityPage">
-			<div class="nameOfSite">
-				<a class="nameOfSite-a" href="/flashHome"> 
-					<h1 class="nameOfSite-h1"> Flashcard App </h1>		
-				</a>
-			</div>
-			<div class="newSets-navBar">
-				<div class="createNewSet">
-					<a class="createNewSet-a" href="/flashCreate"> 
-						<button class="dropbtn"> <i class="far fa-plus-square"></i>
-						</button>
-					</a>
-				</div>
-				<div class="sideNavBar">
-					<a class="sideNavBar-a" href="">
-						<button class="dropbtn"> <i class="fas fa-bars"></i> 
-						</button>
-					</a>
-				</div>
-			</div>
-		</header>	
-		<div class="container-1">
-			<!-- Test ejs values for data that is being sent
-			<ul>
-	     		<li> <%= data.setName %> </li>
-	     		<li> <%= data.term0 %> </li>
-	     		<li> <%= data.definition0 %> </li>
-	     		<li> <%= JSON.stringify(data) %> </li>
-	     		<li> <%= keys %> </li>
-	     		<li> <%= values %> </li>
-	     		<li> <%= length %> </li>
+		<div class="dropbtn-menu">
+			<ul class="dbtn-menu-list">
+				<a href="/profile"> <li> Your Sets </li> </a>
+				<a href=""> <li> Settings </li> </a>
+				<a href="/logout"> <li> Logout </li> </a>
 			</ul>
-			-->
+		</div>
+		<div class="container-1">
+			<header class="headerActivityPage-home">
+				<div class="header">
+					<div class="nameOfSite">
+						<a class="nameOfSite-a" href="/profile"> 
+							<h1 class="nameOfSite-h1"> FlashPass </h1>
+						</a>
+					</div>
+					<div class="newSets-navBar">
+						<div class="createNewSet">
+							<a class="createNewSet-a" href="/flashCreate"> 
+								<button class="dropbtn"> 
+									<i class="far fa-plus-square"></i>
+								</button>
+							</a>
+						</div>
+						<div class="sideNavBar">
+							<div class="sideNavBar-a">
+								<button class="dropbtn" id="newSet-menu"> <i class="fas fa-bars"></i> </button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
 			<div class="div-setName">
 				<h3 class="setName-inSuccessPage"> <%= data.setName %> </h3>
 			</div>

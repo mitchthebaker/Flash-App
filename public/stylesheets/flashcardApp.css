@@ -184,6 +184,7 @@ input[type="text"].searchBar-Input::placeholder {
 	width: 85%;
 	text-align: center;
 	border: solid white 1px;
+	border-radius: 2px;
 	color: white;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	font-family: 'Dosis', 'Montserrat';
@@ -434,22 +435,27 @@ input[type="text"].newSetName-Input::placeholder {
 */
 
 .div-setName {
-	width: 80%;
+	width: 95%;
 }
+
 .setName-inSuccessPage {
-	margin: 40px;
+	text-align: center;
+	margin: 80px 40px 40px 40px;
 	color: white;
 	font-size: 30px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Dosis', sans-serif;
+	font-weight: bolder;
 }
 
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
-	background-color: grey;
-	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	background-color: transparent;
 	margin: 10px;
 	cursor: pointer;
+	text-align: center;
+	color: white;
+	font-family: 'Dosis', 'Montserrat';
 }
 	/* flip the pane when hovered
 
@@ -470,17 +476,20 @@ input[type="text"].newSetName-Input::placeholder {
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
+	cursor: pointer;
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
+    -webkit-backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
+	border: 1px solid white;
+	border-radius: 2px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 /* front pane, placed above back */
@@ -497,16 +506,16 @@ input[type="text"].newSetName-Input::placeholder {
 
 .cardButtons {
 	display: inline-block;
-	width: 25%;
+	width: 75%;
 	text-align: center;
 }
 
 .previousButton, .nextButton {
-	background-color: grey;
-	margin: 15px;
+	background-color: white;
+	margin: 20px;
 	border: 0;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	cursor: pointer;
 }
@@ -581,6 +590,7 @@ input[type="text"].newSetName-Input::placeholder {
 	font-family: 'Dosis', sans-serif;
 	font-weight: bolder;
 	border: solid white 1px;
+	border-radius: 2px;
 }
 
 .home-container {
@@ -667,6 +677,7 @@ a {
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	border-radius: 2px;
 }
 
 .home-img-text2 {
@@ -797,6 +808,7 @@ a {
 	margin: 10px 20px 10px 20px;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	border: solid white 1px;
+	border-radius: 2px;
 }
 
 .Term-Definition-home {
@@ -902,6 +914,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 /* front pane, placed above back */
 .front-home {
 	border: solid white 1px;
+	border-radius: 2px;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	z-index: 2;
 	/* for firefox 31 */
@@ -958,6 +971,7 @@ input[type="text"].newCard-Term-home::placeholder, input[type="text"].newCard-De
 	cursor: pointer;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 	border: solid white 1px;
+	border-radius: 2px;
 	margin-left: auto;
 }
 

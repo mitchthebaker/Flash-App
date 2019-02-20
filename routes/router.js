@@ -186,12 +186,12 @@ module.exports = function(passport) {
       res.render('pages/flashcardAppCreateNewSet-success');
   });
 
-  router.get('/sets/:setId', function(req, res) {
+  router.get('/:setId', function(req, res) {
     console.log(req.params.setId);
     console.log(req.user._id);
     rgExp.rgExpConv(function(err, data) {
       if(err) {
-        console.log('Current error in route /sets/' + req.params.setId + ' of: ' + err);
+        console.log('Current error in route /' + req.params.setId + ' of: ' + err);
         return next(err);
       }
 
