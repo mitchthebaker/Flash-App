@@ -1038,6 +1038,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	margin: 10px 10px 5px 10px;
 	background-color: transparent;
 	border: solid white 1px;
+	border-radius: 2px;
 	color: white;
 	text-align: center;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
@@ -1052,6 +1053,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	margin: 5px;
 	background-color: transparent;
 	border: solid white 1px;
+	border-radius: 2px;
 	color: white;
 	text-align: center;
 	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
@@ -1185,6 +1187,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	border: solid white 1px;
 	color: white;
 	text-align: center;
+	border-radius: 2px;
 }
 
 .register-user-header, .register-pass-header, .register-passConf-header {
@@ -1198,6 +1201,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	border: solid white 1px;
 	color: white;
 	text-align: center;
+	border-radius: 2px;
 }
 
 .register-form-header input[type="text"]::placeholder {
@@ -1223,6 +1227,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	margin: 5px;
 	border: solid white 1px;
 	cursor: pointer;
+	border-radius: 2px;
 }
 
 .register-login-header {
@@ -1332,6 +1337,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	margin: 5px;
 	border: solid white 1px;
 	cursor: pointer;
+	border-radius: 2px;
 }
 
 .footer-home {
