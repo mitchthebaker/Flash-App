@@ -145,9 +145,7 @@ module.exports = function(passport) {
 
   //GET route for flashHome
   router.get('/flashHome', (req, res) => {
-
     res.render('pages/flashcardAppIndex');
-
   });
 
   //GET route for flashCreate
