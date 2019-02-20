@@ -1202,8 +1202,8 @@ input:focus.register-pass, textarea:focus.register-pass {
 
 .register-form-header input[type="text"]::placeholder {
 	color: white;
-	font-size: 14px;
-	font-family: 'Thasadith', sans-serif;
+	font-size: 13px;
+	font-family: 'Dosis', sans-serif;
 	font-weight: normal;
 	/*padding: 5px 0px 5px 0px;*/
 	text-align: center;
@@ -1215,10 +1215,10 @@ input:focus.register-pass, textarea:focus.register-pass {
 	appearance: none;
 	background-color: red;
 	color: white;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: bolder;
-	font-family: 'Thasadith', sans-serif;
-	width: 66%;
+	font-family: 'Dosis', sans-serif;
+	width: 69%;
 	height: 45px;
 	margin: 5px;
 	border: solid white 1px;
@@ -1313,7 +1313,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 .login-form-header input[type="text"]::placeholder {
 	color: white;
 	font-size: 13px;
-	font-family: 'Thasadith', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-weight: normal;
 	/*padding: 5px 0px 5px 0px;*/
 }
@@ -1326,7 +1326,7 @@ input:focus.register-pass, textarea:focus.register-pass {
 	color: white;
 	font-size: 13px;
 	font-weight: bolder;
-	font-family: 'Thasadith', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	width: 69%;
 	height: 45px;
 	margin: 5px;
