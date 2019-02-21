@@ -42,11 +42,12 @@
 					keyValue_array: []
 				};
 
-				console.log(flipData.strData);
-				console.log(flipData.key_data());
-				console.log(flipData.value_data());
-
-				/* The below I was using as tests previously
+				/*
+				 * console.log(flipData.strData);
+				 * console.log(flipData.key_data());
+				 * console.log(flipData.value_data());
+				 *
+				 * The below I was using as tests previously
 				 * console.log(key_data);
 				 * console.log(value_data);
 				 *
@@ -73,12 +74,12 @@
 					document.querySelector('.flip-container').classList.toggle('hover');
 				}, false);
 
-				console.log(createCardArray(flipData.key_data(), flipData.value_data()));
+				createCardArray(flipData.key_data(), flipData.value_data());
 
 				query.frontCard.textContent = flipData.keyValue_array[0][0];
 				query.backCard.textContent = flipData.keyValue_array[0][1];
 
-				document.getElementById('cardButtons').addEventListener('click', (event) => {
+				document.getElementById('cardButtons').addEventListener('click', function(event) {
 					var target = event.target;
 
 					if(target.id === 'previousButton') {

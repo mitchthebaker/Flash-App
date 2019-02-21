@@ -77,7 +77,7 @@ console.log(createCardArray(homeData.terms(), homeData.definitions()));
 query.frontCard.textContent = homeData.keyValue_array[0][0];
 query.backCard.textContent = homeData.keyValue_array[0][1];
 
-document.querySelector('.cardButtons-home').addEventListener('click', (event) => {
+document.querySelector('.cardButtons-home').addEventListener('click', function(event) {
 	var target = event.target;
 	console.log(target);
 	if(target.id === 'previousButton-home') {
