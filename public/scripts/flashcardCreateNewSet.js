@@ -18,20 +18,6 @@
 		}
 	}
 
-	function createNewCardDiv() {
-		let newCard = createNewElement("div", {"class": "newCard", "id": "newCard"});
-		
-		newCard.innerHTML = 
-		'<div class="Term-Definition"> <div class="Term"> <input class="newCard-Term" type="text" name="term' + count + '" placeholder="Term"> <h3 class="Term-h3"> Term </h3> </div> <div class="Definition"> <input class="newCard-Definition" type="text" name="definition' + count + '" placeholder="Definition"> <h3 class="Definition-h3"> Definition </h3> </div> </div>';
-
-		console.log(newCard);
-					
-		document.querySelector(".flashForm").appendChild(newCard);
-		count++;
-
-		console.log(count);
-	}
-
 	var elementClicked = false;
 
 	function clickHandler() {
@@ -47,20 +33,19 @@
 		return elementClicked;
 	}
 
-	/*
-	do {
-		document.getElementById("addCardButton").addEventListener("click", function() {
-			createNewCardDiv()
-		});
-	} while((count <= MAX_TERM_VALUE) && (submitTF() !== false));
-	*/
+	document.querySelector(".addCardButton").addEventListener("click", function() {
+		var newCard = createNewElement("div", {"class": "newCard", "id": "newCard"});
+		
+		newCard.innerHTML = 
+		'<div class="Term-Definition"> <div class="Term"> <input class="newCard-Term" type="text" name="term' + count + '" placeholder="Term"> <h3 class="Term-h3"> Term </h3> </div> <div class="Definition"> <input class="newCard-Definition" type="text" name="definition' + count + '" placeholder="Definition"> <h3 class="Definition-h3"> Definition </h3> </div> </div>';
 
-	document.querySelector(".addCardButton").addEventListener("click", createNewCardDiv, false);
+		console.log(newCard);
+					
+		document.querySelector(".flashForm").appendChild(newCard);
+		count++;
 
-	import {sampleData} from '/sampleData.js';
-
-	console.log(sampleData);
-
+		console.log(count);
+	}, false);
 
 /*
 The following code below I used to test how a for loop with "key in data1"

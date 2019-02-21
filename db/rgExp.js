@@ -8,7 +8,7 @@ module.exports = {
 				let tempArray = [];
 				sets.forEach(function(e) {
 					let regExpConv = function(str) {
-						return str.replace(/\s+|[,\/]/g, '-');
+						return str.trim().replace(/\s+|[,\/]/g, '-');
 					}
 					tempArray.push(regExpConv(e.setName));
 				});

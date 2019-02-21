@@ -82,7 +82,7 @@
 				
 				setDirect.setH3_list.forEach(function(e) {
 					var regExpConv = function(str) {
-						return str.replace(/\s+|[,\/]/g, '-');
+						return str.trim().replace(/\s+|[,\/]/g, '-');
 					}
 
 					console.log(regExpConv(e.innerText));
