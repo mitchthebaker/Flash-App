@@ -287,6 +287,7 @@ input[type="text"].searchBar-Input::placeholder {
 	border: 0;
 	background-color: #86ACDE;
 	color: white;
+	padding-bottom: 10px;
 }
 
 input:focus.newSetName-Input, textarea:focus.newSetName-Input {
