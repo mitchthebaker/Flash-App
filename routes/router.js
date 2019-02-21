@@ -15,7 +15,9 @@ var db = mongoose.connection;
 module.exports = function(passport) {
   
   //GET route for the home page
-  router.get('/', (req, res) => res.render('pages/home'));
+  router.get('/', (req, res) => {
+    res.render('pages/home')
+  });
 
   //GET route for login page 
   router.get('/login', (req, res) => {
@@ -40,6 +42,18 @@ module.exports = function(passport) {
     failureRedirect: '/signup', //redirects back to signup page
     failureFlash: true //allows flash messages 
   }));
+
+  // New /logout route
+  router.get('/logout', (req, res) => {
+    console.log('/logout USER: ' + req.user);
+    console.log('/logout SESSION: ' + req.session);
+    if(req.isAuthenticated()) {
+      req.logout();
+      return res.redirect('/');
+    }
+    
+    return res.status(401);  
+  });
 
   //POST route for the home page, potential data is for users 
   //wishing to register an account.
@@ -86,7 +100,7 @@ module.exports = function(passport) {
    
 
   router.get('/profile', isLoggedIn, (req, res) => {
-    //userSetQuery.allSets(req.user._id);
+    console.log('USER: ' + req.user._id + ' and EMAIL: ' + req.user.email);
     userSetQuery.allSets(function(err, data) {
       if(err) {
         return next(err);
@@ -153,7 +167,7 @@ module.exports = function(passport) {
 
   //POST route for flashCreate, potential data is for new sets 
   //created by the user.
-  router.post('/flashCreate', async function(req, res) {
+  router.post('/flashCreate', isLoggedIn, async function(req, res) {
     console.log('USER: ' + req.user._id);
     req.body.userID = req.user._id;
     let set = new newSet(req.body);
@@ -184,9 +198,9 @@ module.exports = function(passport) {
       res.render('pages/flashcardAppCreateNewSet-success');
   });
 
-  router.get('/:setId', function(req, res) {
+  router.get('/:setId', isLoggedIn, function(req, res) {
     console.log(req.params.setId);
-    console.log(req.user._id);
+    //console.log(req.user._id);
     rgExp.rgExpConv(function(err, data) {
       if(err) {
         console.log('Current error in route /' + req.params.setId + ' of: ' + err);
@@ -210,19 +224,11 @@ module.exports = function(passport) {
     */
   });
 
-  /* New /logout route
 
-  router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');  
-  });
-
-  */
-
-  //GET route for logging out a user, destroying session and 
+  /*GET route for logging out a user, destroying session and 
   // returning them back to the home page
   router.get('/logout', function(req, res) {
-  	if(req.session) {
+
   		//Deletes the current session object
   		req.session.destroy(function(err) {
   			if(err) {
@@ -234,9 +240,9 @@ module.exports = function(passport) {
   				return res.redirect('/');
   			}
   		});
-  	}
   });
-
+  */
+  
   function isLoggedIn(req, res, next) {
     //if user is authenticated in the session, continue
     if(req.isAuthenticated())

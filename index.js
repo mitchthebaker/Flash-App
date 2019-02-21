@@ -58,10 +58,16 @@ app.use(express.static(path.join(__dirname, 'public/scripts')));
 //const passport = require('./config/passport')(passport);
 const passport = require('passport');
 app.use(session({
-  secret: 'work hard play hard'
+  secret: 'work hard play hard',
+  saveUninitialized: false,
+  resave: false
 }));
 app.use(passport.initialize());
-app.use(passport.session()); //Persistent login sessions
+app.use(passport.session({
+  secret: 'secret',
+  saveUninitialized: false,
+  resave: false
+})); //Persistent login sessions
 app.use(flash()); // connect-flash is used her to store flash messages into the current session
 
 //Setting up bodyParser, cookieParser, logs
