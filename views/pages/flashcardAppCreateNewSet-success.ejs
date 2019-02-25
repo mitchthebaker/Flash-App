@@ -9,6 +9,7 @@
 		<script src="newSet-menu.js" async> </script>
 		<script> 
 			document.addEventListener('DOMContentLoaded', () => {
+				'use strict';
 				//Sample data that I am using to test the flash card with
 				//import {sampleData} from '/sampleData.js';
 
@@ -30,8 +31,9 @@
 				 * sampleData represented as key_data, and the values from sampleData
 				 * represented as value_data
 				 */
+
 				var flipData = {
-					strData: <%- JSON.stringify(data) %>,
+					strData: <%- JSON.stringify(setData) %>,
 					arrayCount: 0,
 					key_data: function() {
 						return Object.keys(this.strData).slice(2, Object.keys(this.strData).length - 2);
@@ -42,6 +44,8 @@
 					keyValue_array: []
 				};
 
+				console.log(flipData.key_data());
+				console.log(flipData.value_data());
 				/*
 				 * console.log(flipData.strData);
 				 * console.log(flipData.key_data());
@@ -75,6 +79,7 @@
 				}, false);
 
 				createCardArray(flipData.key_data(), flipData.value_data());
+				console.log(flipData.keyValue_array);
 
 				query.frontCard.textContent = flipData.keyValue_array[0][0];
 				query.backCard.textContent = flipData.keyValue_array[0][1];
@@ -144,7 +149,8 @@
 				</div>
 			</header>
 			<div class="div-setName">
-				<h3 class="setName-inSuccessPage"> <%= data.setName %> </h3>
+				<h3 class="setName-inSuccessPage"> <%= setData.setName %> </h3>
+				<%= setData %>
 			</div>
 			<div class="flip-container">
 				<div class="flipper">

@@ -206,16 +206,16 @@ module.exports = function(passport) {
         console.log('Current error in route /' + req.params.setId + ' of: ' + err);
         return next(err);
       }
-
-      let setLength = Object.keys(data).length;  
-      let setKeys = Object.keys(data);
-      let setValues = Object.values(data);
+      console.log(data);
+      console.log(JSON.stringify(data));
+      let strData = JSON.stringify(data);
+      //let setLength = Object.keys(data).length;  
+      //let setKeys = Object.keys(data);
+      //let setValues = Object.values(data);
+      //console.log(setKeys);
 
       res.render('pages/flashcardAppCreateNewSet-success', {
-        data: data,
-        keys: setKeys,
-        values: setValues,
-        length: setLength   
+        setData: data  
       });
     }, req.user._id, req.params.setId);
     /*
